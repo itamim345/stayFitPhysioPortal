@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const user = require('../')
 
 router.post('/login', async (req,res) => {
     try {
@@ -16,3 +17,5 @@ router.post('/register', async (req,res) => {
         
     }
 })
+
+module.exports = router;
