@@ -3,9 +3,21 @@ import {Button, Form} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function Registration() {
+    // const handleSubmit = (event) => {
+    //   event.preventDefault();
+    //   console.log("getting user DAta", event);
+    // }
     const handleSubmit = (event) => {
       event.preventDefault();
-      console.log("getting user DAta", event.target.name.value);
+      const name = event.target.name.value;
+      const email = event.target.email.value;
+      const password = event.target.password.value;
+      const regObj = {
+        name: name,
+        email: email,
+        password: password
+      }
+      console.log(regObj);
     }
     return (
       <div className="container">
