@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button, Form} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import toast from 'react-hot-toast'
 
 export default function Registration() {
     // const handleSubmit = (event) => {
@@ -8,16 +10,33 @@ export default function Registration() {
     //   console.log("getting user DAta", event);
     // }
     const handleSubmit = (event) => {
-      event.preventDefault();
-      const name = event.target.name.value;
-      const email = event.target.email.value;
-      const password = event.target.password.value;
-      const regObj = {
-        name: name,
-        email: email,
-        password: password
+      try {
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        const regObj = {
+          name: name,
+          email: email,
+          password: password,
+        };
+        fetch("http://localhost:5000/api/user/register", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(regObj),
+        })
+          .then((resp) => resp.json())
+          .then((data) => {
+            if (data) {
+              alert("User Added!");
+            }
+          });
+        
+      } catch (error) {
+        
       }
-      console.log(regObj);
+      event.preventDefault();
     }
     return (
       <div className="container">
