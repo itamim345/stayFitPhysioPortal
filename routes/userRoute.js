@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-// const user = require('../Models/userModel'); //Importing Schema form Model
+const user = require('../Models/userModel'); //Importing Schema form Model
 // const bcrypt = require("bcryptjs");
 
 
@@ -44,6 +44,20 @@ const router = express.Router();
         
 //     }
 // })
+
+router.post('/', async(req, res) => {
+    try {
+        const newUser = new user({
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password,
+        });
+        await newUser.save();
+        res.status(200).json(newUser);
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+})
 
 
 router.get('/', (req,res) => {
