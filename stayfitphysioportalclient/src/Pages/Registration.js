@@ -30,6 +30,7 @@ export default function Registration() {
           .then((data) => {
             if (data) {
               toast.success("User Created Successfully!");
+              event.target.reset();
             }
           });
         
