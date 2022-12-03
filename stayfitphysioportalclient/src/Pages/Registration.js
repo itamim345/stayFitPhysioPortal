@@ -1,14 +1,15 @@
 import React from 'react';
 import {Button, Form} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import toast from 'react-hot-toast'
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 export default function Registration() {
     // const handleSubmit = (event) => {
     //   event.preventDefault();
     //   console.log("getting user DAta", event);
     // }
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
       event.preventDefault();
       try {
         const name = event.target.name.value;
@@ -19,21 +20,12 @@ export default function Registration() {
           email: email,
           password: password,
         };
-        fetch("http://localhost:5000/api/user/register", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(regObj),
-        })
-          .then((resp) => resp.json())
-          .then((data) => {
-            if (data) {
-              toast.success("User Created Successfully!");
-              event.target.reset();
-            }
-          });
         
+        //sending form value using axios post method
+        const response = await axios.post('/api/user/register', regObj);
+        if(response.data.success){
+          toast.success(response.data.message)
+        }
       } catch (error) {
         toast.error("Something Went Wrong!")
       }
