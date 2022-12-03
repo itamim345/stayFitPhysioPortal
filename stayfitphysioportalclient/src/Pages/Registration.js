@@ -10,6 +10,7 @@ export default function Registration() {
     //   console.log("getting user DAta", event);
     // }
     const handleSubmit = (event) => {
+      event.preventDefault();
       try {
         const name = event.target.name.value;
         const email = event.target.email.value;
@@ -19,7 +20,7 @@ export default function Registration() {
           email: email,
           password: password,
         };
-        fetch("http://localhost:5000/register", {
+        fetch("http://localhost:5000/api/user/register", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -36,7 +37,6 @@ export default function Registration() {
       } catch (error) {
         
       }
-      event.preventDefault();
     }
     return (
       <div className="container">
