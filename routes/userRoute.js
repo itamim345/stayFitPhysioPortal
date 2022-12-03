@@ -4,59 +4,32 @@ const user = require('../Models/userModel'); //Importing Schema form Model
 // const bcrypt = require("bcryptjs");
 
 
-// router.post('/register', async(req,res) => {
-//     try {
-//         const userExist = await user.findOne({email: req.body.email})
-//         if(userExist){
-//             return res.status(200).send({
-//                 message: "User Exists..",
-//                 success: false
-//             })
-//         }
-//         const password = req.body.password;
-//         const salt = await bcrypt.genSalt(10); //Salted from bcrypt
-//         const hashedPassword = await bcrypt.hash(password,salt); //Hashed the password
-
-//         req.body.password = hashedPassword; //Converted the password to hashed format & inserted to DB
-
-//         const newUser = new user(req.body);
-
-//         await newUser.save();
-//         res.status(200).send({
-//           message: "Successfull User Creation ",
-//           success: true
-//         });
-
-
-//     } catch (error) {
-//         res.status(500).send({
-//             message: "Error Occured!",
-//             success: false, 
-//             error
-//         })
-//     }
-// })
-
-// router.post('/login', async (req,res) => {
-//     try {
-        
-//     } catch (error) {
-        
-//     }
-// })
-
-router.post('/', async(req, res) => {
-    try {
-        const newUser = new user({
-          name: req.body.name,
-          email: req.body.email,
-          password: req.body.password,
-        });
-        await newUser.save();
-        res.status(200).json(newUser);
-    } catch (error) {
-        res.status(500).send(error.message)
+router.post('/register', async(req, res) => {
+   try {
+    //Getting data form req body
+    const {name,email,password} = req.body;
+    //Checking if the user is already exists
+    const userExist = await user.findOne({ email: email });
+    if(userExist){
+        res.status(200).send({
+            message: 'User Already Exists!',
+            success: false
+        })
     }
+    //If everything is ok then trying to create the user
+    const newUser = new user({name,email,password});
+    await newUser.save();
+    res.status(200).send({
+        message: "User Creation Successfull",
+        success: true
+    })
+    
+   } catch (error) {
+        res.status(500).send({
+            message: "Error Occured",
+            success: false
+        })
+   }
 })
 
 

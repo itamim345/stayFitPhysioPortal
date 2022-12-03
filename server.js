@@ -11,8 +11,6 @@ var cors = require("cors");
 require("./config/configdb").connect();
 const PORT = process.env.PORT || 5000;
 
-//Importing Schema form Model
-const user = require("./Models/userModel");
 
 //Importing bcrypt
 const bcrypt = require("bcryptjs");
@@ -24,41 +22,13 @@ app.use(express.json());
 //cors
 app.use(cors());
 
-app.post('/user');
 
 // Importing routes
 const userRoute = require('./routes/userRoute');
 
-//Server Configuration
+//Calling Router (here for register)
 app.use('/api/user', userRoute);
 
-
-//Routes
-app.post("/register", async (req, res) => {
-  try {
-    // // Getting data from request body
-    const { name, email, password } = req.body;
-    const userExist = await user.findOne({ email: email });
-    if (!(name && email && password)) {
-      return res.status(400).send("all Fields are required!");
-    }
-    
-    if (userExist) {
-      return res.status(200).send({
-        message: "User Exists..",
-        success: false,
-      });
-    }
-    const newUser = new user ({name,email,password});
-    const userData = await newUser.save();
-  } catch (error) {
-    return res.status(500).send({
-      message: "Error Occured!",
-      success: false,
-      error,
-    });
-   }
-});
 
 
 // Server Listener
