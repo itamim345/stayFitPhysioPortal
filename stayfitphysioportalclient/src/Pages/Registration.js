@@ -35,7 +35,7 @@ export default function Registration() {
           });
         
       } catch (error) {
-        
+        toast.error("Something Went Wrong!")
       }
     }
     return (
