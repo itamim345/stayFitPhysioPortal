@@ -19,7 +19,7 @@ export default function Registration() {
           email: email,
           password: password,
         };
-        fetch("http://localhost:5000/api/user/register", {
+        fetch("http://localhost:5000/register", {
           method: "POST",
           headers: {
             "content-type": "application/json",

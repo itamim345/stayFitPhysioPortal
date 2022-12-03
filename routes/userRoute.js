@@ -1,5 +1,5 @@
-// const express = require("express");
-// const router = express.Router();
+const express = require("express");
+const router = express.Router();
 // const user = require('../Models/userModel'); //Importing Schema form Model
 // const bcrypt = require("bcryptjs");
 
@@ -45,4 +45,11 @@
 //     }
 // })
 
-// module.exports = router;
+
+router.get('/', (req,res) => {
+    res.status(200).send({
+        message: "Getting new data" 
+    })
+})
+
+module.exports = router;

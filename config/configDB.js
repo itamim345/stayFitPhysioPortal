@@ -1,7 +1,7 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 const mongoUrl =
-  "mongodb+srv://db1:b3aRQbscn84lRSu3@cluster0.njpsmqa.mongodb.net/StyayFitPhysioPortal";
+  process.env.MONGO_URL || "mongodb://localhost:27017/StyayFitPhysioPortal";
 exports.connect = () => {
   mongoose
     .connect(mongoUrl, {
@@ -14,6 +14,7 @@ exports.connect = () => {
       process.exit(1);
     });
 };
+
 // const connection = mongoose.connection;
 // connection.on("connected", () => {
 //     console.log("mongoDB connected successfully!");

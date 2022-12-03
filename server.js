@@ -4,6 +4,9 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
+//Importing Cors
+var cors = require("cors");
+
 // Importing DataBase
 require("./config/configdb").connect();
 const PORT = process.env.PORT || 5000;
@@ -18,11 +21,16 @@ const { connect } = require("mongoose");
 // Json Formatting user Data for sending to DB
 app.use(express.json());
 
-// Importing routes
-// const userRoute = require('./routes/userRoute');
+//cors
+app.use(cors());
 
-// Server Configuration
-// app.use('/api/user', userRoute);
+app.post('/user');
+
+// Importing routes
+const userRoute = require('./routes/userRoute');
+
+//Server Configuration
+app.use('/api/user', userRoute);
 
 
 //Routes
