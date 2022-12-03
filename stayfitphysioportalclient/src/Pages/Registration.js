@@ -1,7 +1,6 @@
 import React from 'react';
 import {Button, Form} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import axios from "axios";
 import toast from 'react-hot-toast'
 
 export default function Registration() {
@@ -30,7 +29,7 @@ export default function Registration() {
           .then((resp) => resp.json())
           .then((data) => {
             if (data) {
-              alert("User Added!");
+              toast.success("User Created Successfully!");
             }
           });
         
