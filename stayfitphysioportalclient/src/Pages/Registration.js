@@ -26,6 +26,8 @@ export default function Registration() {
           //navigating to login
           toast.success("Redirecting to Login");
           navigate('/login');
+        }else {
+          toast.error(response.data.message);
         }
       } catch (error) {
         toast.error("Something Went Wrong!")
