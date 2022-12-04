@@ -8,11 +8,11 @@ const jwt = require("jsonwebtoken");
 
 router.post('/register', async(req, res) => {
    try {
-     const { name, email, password } = req.body; //Getting data form req body
-     const encryptedpass = await bcrypt.hash(password, 10); //encrypting the password
+     const { name, email, pass } = req.body; //Getting data form req body
+     //const encryptedpass = await bcrypt.hash(password, 10); //encrypting the password
      const oldUser = await user.findOne({email : email}) //finding if any old user in same email
      if(!oldUser){
-        const newUser = new user({ name, email, password: encryptedpass }); //if all ok, create user
+        const newUser = new user({ name, email, pass }); //if all ok, create user
         await newUser.save();
         return res.status(200).send({
           message: "User Creation Successfull",
@@ -36,7 +36,7 @@ router.post('/register', async(req, res) => {
 
 
 router.post('/login', async(req,res) => {
-    const {name, email, password} = req.body;
+    const {name, email, pass} = req.body;
     try {
         const finduser = await user.findOne({email : email});
         if(!finduser){
@@ -45,7 +45,7 @@ router.post('/login', async(req,res) => {
                 success: false
             })
         }
-        if (password == 'temp') {
+        if (pass == finduser.pass) {
           const token = jwt.sign({ id: finduser._id }, process.env.JWT_SECRET, {
             expiresIn: "1d",
           });

@@ -15,7 +15,7 @@ export default function Registration() {
         const regObj = {
           name: name,
           email: email,
-          password: password,
+          pass: password,
         };
         
         //sending form value using axios post method
