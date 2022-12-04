@@ -1,14 +1,11 @@
 import React from 'react';
 import {Button, Form} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 
 export default function Registration() {
-    // const handleSubmit = (event) => {
-    //   event.preventDefault();
-    //   console.log("getting user DAta", event);
-    // }
+    const navigate = useNavigate();
     const handleSubmit = async(event) => {
       event.preventDefault();
       try {
@@ -24,7 +21,11 @@ export default function Registration() {
         //sending form value using axios post method
         const response = await axios.post('/api/user/register', regObj);
         if(response.data.success){
-          toast.success(response.data.message)
+          toast.success(response.data.message);
+          event.target.reset();
+          //navigating to login
+          toast.success("Redirecting to Login");
+          navigate('/login');
         }
       } catch (error) {
         toast.error("Something Went Wrong!")
