@@ -1,17 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const user = require('../Models/userModel'); //Importing Schema form Model
-// const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { findOne } = require("../Models/userModel");
+
 
 
 router.post('/register', async(req, res) => {
    try {
     //Getting data form req body
     const {name,email,password} = req.body;
+    //encrypting the password
+    const encryptedpass = await bcrypt.hash(password, 10)
     //If everything is ok then trying to create the user
-    const newUser = new user({name,email,password});
+    const newUser = new user({name,email,password: encryptedpass});
     await newUser.save();
     res.status(200).send({
         message: "User Creation Successfull",
@@ -29,7 +31,7 @@ router.post('/register', async(req, res) => {
 
 
 router.post('/login', async(req,res) => {
-    const {email,password} = req.body;
+    const {name, email, password} = req.body;
     try {
         const finduser = await user.findOne({email : email});
         if(!finduser){
@@ -39,7 +41,7 @@ router.post('/login', async(req,res) => {
             })
         }
         //const matchpass = finduser.password === password;
-        if (password == finduser.password) {
+        if (password === finduser.password) {
           const token = jwt.sign({ id: finduser._id }, process.env.JWT_SECRET, {
             expiresIn: "1d",
           });
@@ -48,7 +50,7 @@ router.post('/login', async(req,res) => {
             success: true,
             data: token,
           });
-        } else {
+        }else {
             return res.status(200).send({
             message: "Incorrect Password!",
             success: false,
