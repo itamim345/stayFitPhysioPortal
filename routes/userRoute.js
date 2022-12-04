@@ -9,10 +9,10 @@ const jwt = require("jsonwebtoken");
 router.post('/register', async(req, res) => {
    try {
      const { name, email, pass } = req.body; //Getting data form req body
-     //const encryptedpass = await bcrypt.hash(password, 10); //encrypting the password
+     const encryptedpass = await bcrypt.hash(pass, 10); //encrypting the password
      const oldUser = await user.findOne({email : email}) //finding if any old user in same email
      if(!oldUser){
-        const newUser = new user({ name, email, pass }); //if all ok, create user
+        const newUser = new user({ name, email, pass:encryptedpass }); //if all ok, create user
         await newUser.save();
         return res.status(200).send({
           message: "User Creation Successfull",
