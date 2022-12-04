@@ -45,7 +45,7 @@ router.post('/login', async(req,res) => {
                 success: false
             })
         }
-        if (pass == finduser.pass) {
+        if ( await bcrypt.compare(pass, finduser.pass)) {
           const token = jwt.sign({ id: finduser._id }, process.env.JWT_SECRET, {
             expiresIn: "1d",
           });
