@@ -26,7 +26,9 @@ export default function Login() {
         //navigating to login
         toast.success("Redirecting to Home Page");
         localStorage.setItem("token", response.data.data);
-        navigate("/login");
+        navigate("/");
+      }else{
+        toast.error(response.data.message);
       }
     } catch (error) {
       toast.error("Something Went Wrong!");

@@ -3,6 +3,7 @@ const router = express.Router();
 const user = require('../Models/userModel'); //Importing Schema form Model
 // const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { findOne } = require("../Models/userModel");
 
 
 router.post('/register', async(req, res) => {
@@ -27,33 +28,34 @@ router.post('/register', async(req, res) => {
 
 
 
-router.post('.login', async(req,res) => {
+router.post('/login', async(req,res) => {
+    const {email,password} = req.body;
     try {
-        const finduser = await user.findOne({email : req.body.email});
+        const finduser = await user.findOne({email : email});
         if(!finduser){
-            res.status(200).send({
+            return res.status(200).send({
                 message: "User Does Not Exist!",
                 success: false
             })
         }
-        const matchPass = finduser.password;
-        if(!matchPass){
-            res.status(200).send({
-                message: "Incorrect Password!",
-                success: false
-            })
-        }else {
-            const token = jwt.sign({id: finduser._id}, process.env.JWT_SECRET, {
-                expiresIn: "1d"
-            })
-            res.status(200).send({
-                message: "Login Successful",
-                success: true,
-                data: token
-            })
+        //const matchpass = finduser.password === password;
+        if (password == finduser.password) {
+          const token = jwt.sign({ id: finduser._id }, process.env.JWT_SECRET, {
+            expiresIn: "1d",
+          });
+            return res.status(200).send({
+            message: "Login Successful",
+            success: true,
+            data: token,
+          });
+        } else {
+            return res.status(200).send({
+            message: "Incorrect Password!",
+            success: false,
+          });
         }
     } catch (error) {
-        res.status.send({
+            return res.status(500).send({
             message: "Error to login",
             success: false
         })
