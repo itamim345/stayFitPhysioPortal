@@ -3,9 +3,10 @@ const router = express.Router();
 const user = require('../Models/userModel'); //Importing Schema form Model
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const authmiddleware = require("../Middlewares/authMiddleware")
 
 
-
+// Register Route
 router.post('/register', async(req, res) => {
    try {
      const { name, email, pass } = req.body; //Getting data form req body
@@ -33,8 +34,7 @@ router.post('/register', async(req, res) => {
    }
 })
 
-
-
+//Login Route
 router.post('/login', async(req,res) => {
     const {name, email, pass} = req.body;
     try {
@@ -66,6 +66,31 @@ router.post('/login', async(req,res) => {
             success: false
         })
     }
+})
+
+router.post('/get-user-info-by-id', authmiddleware, async(req, res)=>{
+  try {
+    const findUser = await user.findOne({_id: req.body.userId})
+    if (!findUser) {
+      return res.status(200).send({
+        message: "User Doesn't Exist",
+        success: false,
+      });
+    } else {
+      res.status(200).send({
+        success: true,
+        data: {
+          name: findUser.name,
+          email: findUser.email
+        }
+      });
+    }
+    }catch (error) {
+      return res.status(500).send({
+        message: "Error to get user info",
+        success: false
+      })
+  } 
 })
 
 module.exports = router;
