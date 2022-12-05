@@ -7,7 +7,7 @@ import Home from './Pages/Home';
 import Dashboard from './Pages/Dashboard';
 import ProtectedRoute from './Components/ProtectedRoute';
 import PublicRoute from './Components/PublicRoute';
-import ApplyDoctor from './Components/ApplyDoctor';
+import ApplyTherapist from './Components/ApplyTherapist';
 
 function App() {
   return (
@@ -41,10 +41,10 @@ function App() {
             }
           />
           <Route
-            path="/apply-doctor"
+            path="/apply-therapist"
             element={
               <ProtectedRoute>
-                <ApplyDoctor/>
+                <ApplyTherapist/>
               </ProtectedRoute>
             }
           />

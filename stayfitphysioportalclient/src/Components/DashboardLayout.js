@@ -19,8 +19,8 @@ export default function DashboardLayout(props) {
       icon: "ri-todo-line",
     },
     {
-      name: "Apply Doctor",
-      path: "/apply-doctor",
+      name: "Apply Therapist",
+      path: "/apply-therapist",
       icon: "ri-user-search-line",
     }
   ];
@@ -36,8 +36,8 @@ export default function DashboardLayout(props) {
       icon: "ri-file-user-line",
     },
     {
-      name: "Doctors",
-      path: "/doctors",
+      name: "Therapists",
+      path: "/therapists",
       icon: "ri-shield-user-line",
     },
   ];

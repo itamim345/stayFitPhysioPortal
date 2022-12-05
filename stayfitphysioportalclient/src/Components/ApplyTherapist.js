@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 import DashboardLayout from './DashboardLayout';
 
-export default function ApplyDoctor() {
+export default function ApplyTherapist() {
     return (
       <div>
         <DashboardLayout>
@@ -86,7 +86,7 @@ export default function ApplyDoctor() {
               </Form.Group>
             </Row>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" size="sm" className='px-3'>
               Submit
             </Button>
           </Form>
