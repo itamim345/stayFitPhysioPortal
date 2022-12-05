@@ -1,8 +1,9 @@
 import React from 'react';
 import '../OurCss/dashboardlayout.css'
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 
 export default function DashboardLayout(props) {
+  const location = useLocation();
   const usermenu = [
     {
       name: "Dashboard",
@@ -35,8 +36,9 @@ export default function DashboardLayout(props) {
             </div>
             <div className="left-db-main">
               {menuforRender.map( (menuitem) => {
+                const isActive = location.pathname === menuitem.path;
                 return (
-                  <div className='single-menu-item'>
+                  <div className={`single-menu-item ${isActive && `active-menu-item`}`}>
                     <i class={menuitem.icon}></i>
                     <Link to={menuitem.path}>{menuitem.name}</Link>
                   </div>

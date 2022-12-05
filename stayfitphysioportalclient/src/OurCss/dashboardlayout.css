@@ -36,8 +36,16 @@
     align-items: center;
     margin: 1rem 0;
     gap: .5rem;
+    padding: .2rem 0 .2rem .5rem;
 }
 .single-menu-item a {
     color: white;
     text-decoration: none;
+}
+.active-menu-item {
+    background-color: black;
+}
+
+.left-db-title {
+    margin: 1rem  0 2rem 0;
 }
