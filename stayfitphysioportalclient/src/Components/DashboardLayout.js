@@ -1,10 +1,11 @@
 import React from 'react';
 import '../OurCss/dashboardlayout.css'
-import {Link, useLocation} from "react-router-dom"
+import {Link, useLocation, useNavigate} from "react-router-dom"
 import { useSelector } from "react-redux";
 
 export default function DashboardLayout(props) {
   const location = useLocation();
+  const navigate = useNavigate()
   const {user} = useSelector((state) => state.user)
   const usermenu = [
     {
@@ -21,14 +22,26 @@ export default function DashboardLayout(props) {
       name: "Apply Doctor",
       path: "/apply-doctor",
       icon: "ri-user-search-line",
+    }
+  ];
+  const adminmenu = [
+    {
+      name: "Dashboard",
+      path: "/dashboard",
+      icon: "ri-dashboard-line",
     },
     {
-      name: "Log Out",
-      path: "/logout",
-      icon: "ri-logout-circle-r-line",
+      name: "Users",
+      path: "/users",
+      icon: "ri-user-line"
     },
+    {
+      name: "Doctors",
+      path: "/doctors",
+      icon: "ri-user-line"
+    }
   ];
-  const menuforRender = usermenu;
+  const menuforRender = user?.isAdmin ? adminmenu : usermenu;
   return (
     <div>
       <div className="db-layout m-4">
@@ -50,12 +63,22 @@ export default function DashboardLayout(props) {
                 </div>
               );
             })}
+            <div
+              className="single-menu-item"
+              onClick={() => {
+                localStorage.clear();
+                navigate("/login");
+              }}
+            >
+              <i className="ri-logout-circle-r-line"></i>
+              <Link to="/login">Log Out</Link>
+            </div>
           </div>
         </div>
         <div className="main-db">
           <div className="main-db-header">
             <div>Welcome to Stay Fit Physio Portal!</div>
-            <div className='header-user'>
+            <div className="header-user">
               <i className="ri-notification-3-line"></i>
               <Link to="/user-profile">{user?.name}</Link>
             </div>
