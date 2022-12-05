@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import { useEffect } from 'react';
+import DashboardLayout from '../Components/DashboardLayout';
 
 export default function Dashboard() {
 
@@ -21,9 +22,7 @@ export default function Dashboard() {
     getData();
   }, []);
 
-  return (
-    <div>
+  return <DashboardLayout>
       <h2>Welcome to dashboard!</h2>
-    </div>
-  );
+    </DashboardLayout>
 }

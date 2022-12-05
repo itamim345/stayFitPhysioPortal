@@ -1,6 +1,7 @@
 import React from 'react';
+import '../OurCss/dashboardlayout.css'
 
-export default function DashboardLayout() {
+export default function DashboardLayout(props) {
   return (
     <div>
       <div className="db-layout">
@@ -13,6 +14,7 @@ export default function DashboardLayout() {
             </div>
             <div className="main-db-content">
                 <h1>MAIN CONTENT</h1>
+                <p>{props.children}</p>
             </div>
         </div>
       </div>

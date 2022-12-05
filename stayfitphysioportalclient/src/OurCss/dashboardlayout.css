@@ -1,0 +1,6 @@
+.db-layout {
+    display: flex;
+}
+.left-db{
+    background: gray;
+}
