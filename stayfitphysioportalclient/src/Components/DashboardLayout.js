@@ -1,9 +1,11 @@
 import React from 'react';
 import '../OurCss/dashboardlayout.css'
 import {Link, useLocation} from "react-router-dom"
+import { useSelector } from "react-redux";
 
 export default function DashboardLayout(props) {
   const location = useLocation();
+  const {user} = useSelector((state) => state.user)
   const usermenu = [
     {
       name: "Dashboard",
@@ -43,7 +45,7 @@ export default function DashboardLayout(props) {
                     isActive && `active-menu-item`
                   }`}
                 >
-                  <i class={menuitem.icon}></i>
+                  <i className={menuitem.icon}></i>
                   <Link to={menuitem.path}>{menuitem.name}</Link>
                 </div>
               );
@@ -53,8 +55,9 @@ export default function DashboardLayout(props) {
         <div className="main-db">
           <div className="main-db-header">
             <div>Welcome to Stay Fit Physio Portal!</div>
-            <div>
+            <div className='header-user'>
               <i className="ri-notification-3-line"></i>
+              <Link to="/user-profile">{user?.name}</Link>
             </div>
           </div>
           <div className="main-db-content">
