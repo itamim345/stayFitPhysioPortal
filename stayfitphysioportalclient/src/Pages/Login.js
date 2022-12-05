@@ -24,9 +24,9 @@ export default function Login() {
         toast.success(response.data.message);
         event.target.reset();
         //navigating to login
-        toast.success("Redirecting to Home Page");
+        toast.success("Redirecting dashboard");
         localStorage.setItem("token", response.data.data);
-        navigate("/");
+        navigate("/dashboard");
       }else{
         toast.error(response.data.message);
       }

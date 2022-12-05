@@ -4,6 +4,7 @@ import Login from './Pages/Login';
 import Registration from './Pages/Registration';
 import {Toaster} from 'react-hot-toast';
 import Home from './Pages/Home';
+import Dashboard from './Pages/Dashboard';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/" element={<Home/>}/>
+          <Route path="/dashboard" element={<Dashboard/>}/>
         </Routes>
       </BrowserRouter>
     </div>
