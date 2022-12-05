@@ -1,6 +1,32 @@
 .db-layout {
     display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    gap: 1rem;
 }
 .left-db{
-    background: gray;
+    background: #242B2E;
+    height: 90vh;
+    width: 15vw;
+    border-radius: 5px;
+    padding: .5rem;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.main-db {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 90vh;
+    width: 100%;   
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 5px;
+}
+.main-db-header {
+    border-bottom: 2px solid #e6d5d5;
+    padding: .5rem;
+}
+.main-db-content {
+    /* border-top: 2px solid #e6d5d5; */
+    padding: .5rem;
 }

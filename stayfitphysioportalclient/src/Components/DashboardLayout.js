@@ -4,7 +4,7 @@ import '../OurCss/dashboardlayout.css'
 export default function DashboardLayout(props) {
   return (
     <div>
-      <div className="db-layout">
+      <div className="db-layout m-4">
         <div className="left-db">
             <h2>Left DB</h2>
         </div>
@@ -13,7 +13,6 @@ export default function DashboardLayout(props) {
                 <p>main-db-header</p>
             </div>
             <div className="main-db-content">
-                <h1>MAIN CONTENT</h1>
                 <p>{props.children}</p>
             </div>
         </div>
