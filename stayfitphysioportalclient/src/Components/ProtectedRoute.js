@@ -1,16 +1,31 @@
 import React, { useEffect } from 'react';
 import {Navigate, useNavigate} from 'react-router-dom';
-import {useSelector} from 'react-redux';
-import axios from 'axios'
+import {useSelector,useDispatch} from 'react-redux';
+import axios from 'axios';
+import { setUser } from '../Redux/userSlice';
 
 export default function ProtectedRoute(props) {
     const {user} = useSelector((state) => state.user)
+    const dispatch = useDispatch()
     const navigate = useNavigate();
     const getUser = async()=> {
         try {
-            const response = await axios.post('/api/user/get-user-info', )
+            const response = await axios.post('/api/user/get-user-info-by-id', {
+                token: localStorage.getItem('token')
+            },
+            {
+                headers : {
+                    Authorization : `Bearer ${localStorage.getItem('token')}`
+                }
+            }
+            )
+            if(response.data.success){
+                dispatch(setUser(response.data.data))
+            }else {
+                navigate('/login')
+            }
         } catch (error) {
-            
+            navigate('/login')
         }
     }
 
