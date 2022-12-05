@@ -33,13 +33,13 @@ export default function DashboardLayout(props) {
     {
       name: "Users",
       path: "/users",
-      icon: "ri-user-line"
+      icon: "ri-file-user-line",
     },
     {
       name: "Doctors",
       path: "/doctors",
-      icon: "ri-user-line"
-    }
+      icon: "ri-shield-user-line",
+    },
   ];
   const menuforRender = user?.isAdmin ? adminmenu : usermenu;
   return (
@@ -66,7 +66,7 @@ export default function DashboardLayout(props) {
             <div
               className="single-menu-item"
               onClick={() => {
-                localStorage.clear();
+                localStorage.clear()
                 navigate("/login");
               }}
             >

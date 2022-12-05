@@ -71,6 +71,7 @@ router.post('/login', async(req,res) => {
 router.post('/get-user-info-by-id', authmiddleware, async(req, res)=>{
   try {
     const findUser = await user.findOne({_id: req.body.userId})
+    findUser.password = undefined; //converting password undefined as need to send whole data as response
     if (!findUser) {
       return res.status(200).send({
         message: "User Doesn't Exist",
@@ -79,10 +80,7 @@ router.post('/get-user-info-by-id', authmiddleware, async(req, res)=>{
     } else {
       res.status(200).send({
         success: true,
-        data: {
-          name: findUser.name,
-          email: findUser.email
-        }
+        data: findUser //sending the whole founduser
       });
     }
     }catch (error) {
