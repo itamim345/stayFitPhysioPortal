@@ -18,8 +18,8 @@
     flex-direction: column;
     gap: 1rem;
     height: 90vh;
-    width: 100%;   
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5px;
 }
 .main-db-header {
