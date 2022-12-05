@@ -30,3 +30,14 @@
     /* border-top: 2px solid #e6d5d5; */
     padding: .5rem;
 }
+
+.single-menu-item {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    gap: .5rem;
+}
+.single-menu-item a {
+    color: white;
+    text-decoration: none;
+}
