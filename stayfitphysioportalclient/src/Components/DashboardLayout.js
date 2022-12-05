@@ -31,28 +31,35 @@ export default function DashboardLayout(props) {
     <div>
       <div className="db-layout m-4">
         <div className="left-db">
-            <div className="left-db-title">
-              <h4>StyFit Portal</h4>
-            </div>
-            <div className="left-db-main">
-              {menuforRender.map( (menuitem) => {
-                const isActive = location.pathname === menuitem.path;
-                return (
-                  <div className={`single-menu-item ${isActive && `active-menu-item`}`}>
-                    <i class={menuitem.icon}></i>
-                    <Link to={menuitem.path}>{menuitem.name}</Link>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="left-db-title">
+            <h4>StyFit Portal</h4>
+          </div>
+          <div className="left-db-main">
+            {menuforRender.map((menuitem) => {
+              const isActive = location.pathname === menuitem.path;
+              return (
+                <div
+                  className={`single-menu-item ${
+                    isActive && `active-menu-item`
+                  }`}
+                >
+                  <i class={menuitem.icon}></i>
+                  <Link to={menuitem.path}>{menuitem.name}</Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div className="main-db">
-            <div className="main-db-header">
-                <p>main-db-header</p>
+          <div className="main-db-header">
+            <div>Welcome to Stay Fit Physio Portal!</div>
+            <div>
+              <i className="ri-notification-3-line"></i>
             </div>
-            <div className="main-db-content">
-                <p>{props.children}</p>
-            </div>
+          </div>
+          <div className="main-db-content">
+            <p>{props.children}</p>
+          </div>
         </div>
       </div>
     </div>

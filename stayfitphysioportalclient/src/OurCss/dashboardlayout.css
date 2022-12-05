@@ -23,8 +23,15 @@
     border-radius: 5px;
 }
 .main-db-header {
-    border-bottom: 2px solid #e6d5d5;
+    /* border-bottom: 2px solid #e6d5d5; */
+    border-bottom: 2px solid #494c4d;
     padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-db-header i {
+    font-size: 1.5rem;
 }
 .main-db-content {
     /* border-top: 2px solid #e6d5d5; */
