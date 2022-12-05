@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const doctorSchema = new mongoose.Schema({
+const therapistSchema = new mongoose.Schema({
     userId: {
         type: String,
         required: true
@@ -50,5 +50,5 @@ const doctorSchema = new mongoose.Schema({
 }
 )
 
-const doctorModel = mongoose.model("doctors", doctorSchema);
-module.exports = doctorModel;
+const therapistModel = mongoose.model("therapist", therapistSchema);
+module.exports = therapistModel;
