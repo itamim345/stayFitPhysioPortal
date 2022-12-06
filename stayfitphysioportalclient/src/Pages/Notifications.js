@@ -33,24 +33,60 @@ export default function Notifications() {
             toast.error("Something Went Wrong!");
         }
     }
+    const deleteAllNotify = async() => {
+        try {
+            dispatch(showLoading());
+            const response = await axios.post("/api/user/delete-all-notifications", {userId: user._id}, {
+              headers : {
+                Authorization : `Bearer ${localStorage.getItem("token")}`
+              }
+            })
+            dispatch(hideLoading())
+            if(response.data.success){
+                toast.success(response.data.message);
+                dispatch(setUser(response.data.data))
+            }else {
+                toast.error(response.data.message);
+            }
+        } catch (error) {
+            dispatch(hideLoading())
+            toast.error("Something Went Wrong!");
+        }
+    }
   return (
     <DashboardLayout>
       <h3>Notification</h3>
       <Tabs>
         <Tabs.TabPane tab="Unseen" key={0}>
           <div className="d-flex justify-content-end">
-            <p className="text-decoration-underline cursor-p" onClick={() => markAllasSeen()}>Mark All As Seen</p>
+            <p
+              className="text-decoration-underline cursor-p"
+              onClick={() => markAllasSeen()}
+            >
+              Mark All As Seen
+            </p>
           </div>
           {user?.unseenNotification.map((notify) => (
-            <div className='card p-3 m-2' onClick={() => navigate(notify.onClickPath)}>
+            <div
+              className="card p-3 m-2"
+              onClick={() => navigate(notify.onClickPath)}
+            >
               <div className="card-text">{notify.message}</div>
             </div>
           ))}
         </Tabs.TabPane>
         <Tabs.TabPane tab="Seen" key={1}>
           <div className="d-flex justify-content-end">
-            <Link className="text-decoration-underline">Delete All</Link>
+            <p className="text-decoration-underline cursor-p" onClick={()=> deleteAllNotify()}>Delete All</p>
           </div>
+          {user?.seenNotifications.map((notify) => (
+            <div
+              className="card p-3 m-2"
+              onClick={() => navigate(notify.onClickPath)}
+            >
+              <div className="card-text">{notify.message}</div>
+            </div>
+          ))}
         </Tabs.TabPane>
       </Tabs>
     </DashboardLayout>
