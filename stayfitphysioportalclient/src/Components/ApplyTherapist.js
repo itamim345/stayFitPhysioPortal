@@ -1,94 +1,113 @@
-import { TimePicker } from 'antd';
+import { Col, Form, Input, Row, TimePicker} from 'antd';
 import React from 'react';
-import { Button, Form, Row, Col } from 'react-bootstrap';
 import DashboardLayout from './DashboardLayout';
 
 export default function ApplyTherapist() {
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+    const time = event.target.timing.value
+    console.log("success",time);
+  }
     return (
       <div>
         <DashboardLayout>
-          <h2 className="text-center mb-3 text-danger">Apply as a Doctor</h2>
-          <Form>
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridFname">
-                <Form.Label>First Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="First Name..."
-                  size="sm"
-                />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridLname">
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Last Name..."
-                  size="sm"
-                />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Email Address..."
-                  size="sm"
-                />
-              </Form.Group>
+          <div>
+            <h4 className="text-center mb-3 text-danger">
+              Apply as a Therapist
+            </h4>
+            <hr />
+          </div>
+          <Form layout="vertical">
+            <h6>Personal Info:</h6>
+            <Row gutter={20}>
+              <Col span="8">
+                <Form.Item
+                  label="First Name"
+                  name="firstName"
+                  rules={[{ required: true }]}
+                >
+                  <Input placeholder="First Name..." />
+                </Form.Item>
+              </Col>
+              <Col span="8">
+                <Form.Item
+                  label="Last Name"
+                  name="lastName"
+                  rules={[{ required: true }]}
+                >
+                  <Input placeholder="Last Name..." />
+                </Form.Item>
+              </Col>
+              <Col span="8">
+                <Form.Item
+                  label="Email"
+                  name="email"
+                  rules={[{ required: true }]}
+                >
+                  <Input placeholder="First Name..." />
+                </Form.Item>
+              </Col>
             </Row>
-
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridPhone">
-                <Form.Label>Phone</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Phone Number..."
-                  size="sm"
-                />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridAddress2">
-                <Form.Label>Address</Form.Label>
-                <Form.Control
-                  placeholder="Apartment, street, or floor"
-                  size="sm"
-                />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridExperience">
-                <Form.Label>Experience</Form.Label>
-                <Form.Control placeholder="Experience Year" size="sm" />
-              </Form.Group>
+            <Row gutter={20}>
+              <Col span="8">
+                <Form.Item
+                  label="Phone"
+                  name="Phone"
+                  rules={[{ required: true }]}
+                >
+                  <Input placeholder="Phone Number..." />
+                </Form.Item>
+              </Col>
+              <Col span="8">
+                <Form.Item
+                  label="Address"
+                  name="adress"
+                  rules={[{ required: true }]}
+                >
+                  <Input placeholder="Address..." />
+                </Form.Item>
+              </Col>
+              <Col span="8">
+                <Form.Item
+                  label="Experience"
+                  name="experience"
+                  rules={[{ required: true }]}
+                >
+                  <Input placeholder="Experience Year..." />
+                </Form.Item>
+              </Col>
             </Row>
-
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridSpeciality">
-                <Form.Label>Specialization</Form.Label>
-                <Form.Select defaultValue="Choose..." size="sm">
-                  <option>Choose...</option>
-                  <option>Neurological</option>
-                  <option>Orthopedic</option>
-                  <option>Pediatric</option>
-                  <option>Geriatric</option>
-                  <option>VRT Therapist</option>
-                </Form.Select>
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridFees">
-                <Form.Label>Fees</Form.Label>
-                <Form.Control placeholder="Consultancy Fees" size="sm" />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridTiming">
-                <Form.Label>Timing</Form.Label>
-                <TimePicker.RangePicker />
-              </Form.Group>
+            <hr />
+            <h6>Professional Info:</h6>
+            <Row gutter={20}>
+              <Col span="8">
+                <Form.Item
+                  label="Specialization"
+                  name="Specialization"
+                  rules={[{ required: true }]}
+                >
+                  <Input placeholder="..." />
+                </Form.Item>
+              </Col>
+              <Col span="8">
+                <Form.Item
+                  label="Fees"
+                  name="consultancyFees"
+                  rules={[{ required: true }]}
+                >
+                  <Input placeholder="consultancyFees" />
+                </Form.Item>
+              </Col>
+              <Col span="8">
+                <Form.Item
+                  label="Timing"
+                  name="timing"
+                  rules={[{ required: true }]}
+                >
+                  <TimePicker.RangePicker />
+                </Form.Item>
+              </Col>
             </Row>
-
-            <Button variant="primary" type="submit" size="sm" className='px-3'>
-              Submit
-            </Button>
           </Form>
         </DashboardLayout>
       </div>
