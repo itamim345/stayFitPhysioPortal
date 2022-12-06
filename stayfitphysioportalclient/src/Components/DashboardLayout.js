@@ -80,7 +80,7 @@ export default function DashboardLayout(props) {
           <div className="main-db-header">
             <div>Welcome to Stay Fit Physio Portal!</div>
             <div className="header-user">
-              <Badge count={user?.unseenNotification.length}>
+              <Badge count={user?.unseenNotification.length} onClick={ () => navigate('/notifications')}>
                 <i className="ri-notification-3-line"></i>
               </Badge>
 

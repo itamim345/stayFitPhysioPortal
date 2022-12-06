@@ -9,6 +9,7 @@ import ProtectedRoute from './Components/ProtectedRoute';
 import PublicRoute from './Components/PublicRoute';
 import ApplyTherapist from './Components/ApplyTherapist';
 import { useSelector } from 'react-redux';
+import Notifications from './Pages/Notifications';
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -52,6 +53,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <ApplyTherapist />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <ProtectedRoute>
+                <Notifications/>
               </ProtectedRoute>
             }
           />
