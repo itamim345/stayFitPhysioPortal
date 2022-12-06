@@ -123,5 +123,47 @@ router.post("/apply-therapist-account", authmiddleware, async (req, res) => {
     });
   }
 });
+//Mark All Notification Route
+router.post("/mark-all-notifications-seen", authmiddleware, async (req, res) => {
+  try{
+    const User = await user.findOne({_id: req.body.userId})
+    const unseenNotification = User.unseenNotification;
+    User.seenNotifications = unseenNotification;
+    User.unseenNotification = [];
+    const updatedUser = await user.findByIdAndUpdate(user._id, User)
+    updatedUser.pass = undefined;
+    return res.status(200).send({
+      message: "All notifications marked as seen",
+      success: true,
+      data: updatedUser
+    })
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error Occured in applying-therapist account", 
+      success: false,
+    });
+  }
+});
+// Delete All Notification Route
+router.post("/delete-all-notifications", authmiddleware, async (req, res) => {
+  try{
+    const User = await user.findOne({_id: req.body.userId})
+    User.seenNotifications = [];
+    User.unseenNotification = [];
+    const updatedUser = await User.findByIdAndUpdate(user._id, User);
+    updatedUser.pass = undefined;
+    return res.status(200).send({
+      message: "All notifications has deleted",
+      success: true,
+      data: updatedUser
+    })
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error Occured in applying-therapist account", 
+      success: false,
+    });
+  }
+});
+
 
 module.exports = router;
