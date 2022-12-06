@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const user = require('../Models/userModel'); //Importing Schema form Model
+const therapist = require('../Models/therapistModel'); //Importing Schema form Model
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authmiddleware = require("../Middlewares/authMiddleware")
@@ -68,6 +69,7 @@ router.post('/login', async(req,res) => {
     }
 })
 
+//Get-user-info-by-id Route
 router.post('/get-user-info-by-id', authmiddleware, async(req, res)=>{
   try {
     const findUser = await user.findOne({_id: req.body.userId})
@@ -89,6 +91,32 @@ router.post('/get-user-info-by-id', authmiddleware, async(req, res)=>{
         success: false
       })
   } 
+})
+
+//Apply Therapist Route
+router.post('/apply-therapist-account', async(req, res) => {
+   try{
+    const newTherapist = new therapist({...req.body, status: "pending"})
+    await newTherapist.save();
+    const adminUser = await user.findOne({isAdmin : true})
+
+    const unseenNotification = adminUser.unseenNotification;
+    unseenNotification.push({
+      type: "New-therapist-request",
+      message: `${newTherapist.firstName} has Applied for a Therapist Account!`,
+      data : {
+        therapistId : newTherapist._id,
+        name: newTherapist.firstName+newTherapist.lastName
+      },
+      onClickPath : "/admin/therapists"
+    })
+    await user.findByIdAndUpdate(adminUser._id, {unseenNotification})
+   } catch (error) {
+        return res.status(500).send({
+            message: "Error Occured in applying-therapist account",
+            success: false
+        })
+   }
 })
 
 module.exports = router;

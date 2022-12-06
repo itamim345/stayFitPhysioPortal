@@ -39,6 +39,10 @@ const therapistSchema = new mongoose.Schema({
     timing: {
         type: Array,
         required: true
+    },
+    status: {
+        type: String,
+        default: "pending"
     }
 },
 {
