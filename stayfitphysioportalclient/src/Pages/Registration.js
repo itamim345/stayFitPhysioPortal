@@ -3,12 +3,16 @@ import {Button, Form} from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { hideLoading, showLoading } from '../Redux/alertReducers';
 
 export default function Registration() {
+   const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleSubmit = async(event) => {
       event.preventDefault();
       try {
+        dispatch(showLoading());
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
@@ -20,6 +24,7 @@ export default function Registration() {
         
         //sending form value using axios post method
         const response = await axios.post('/api/user/register', regObj);
+        dispatch(hideLoading());
         if(response.data.success){
           toast.success(response.data.message);
           event.target.reset();
@@ -27,9 +32,11 @@ export default function Registration() {
           toast.success("Redirecting to Login");
           navigate('/login');
         }else {
+          dispatch(hideLoading());
           toast.error(response.data.message);
         }
       } catch (error) {
+        dispatch(hideLoading());
         toast.error("Something Went Wrong!")
       }
     }
