@@ -2,26 +2,40 @@ import { Button, Col, Form, Input, Row, TimePicker} from 'antd';
 import axios from 'axios';
 import React from 'react';
 import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import DashboardLayout from './DashboardLayout';
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { hideLoading, showLoading } from "../Redux/alertReducers";
 
 export default function ApplyTherapist() {
-  // const { user } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const handleSubmit = async (values) => {
     try {
+      dispatch(showLoading())
       //sending form value using axios post method
-      const response = await axios.post("/api/user/apply-therapist-account", values);
+      const response = await axios.post("/api/user/apply-therapist-account", {
+        ...values,
+        userId: user._id
+      },
+      {
+        headers : {
+          Authorization : `Bearer ${localStorage.getItem("token")}`
+        }
+      });
+      dispatch(hideLoading())
       if (response.data.success) {
         toast.success(response.data.message);
         //navigating to Dashboard
-        toast.success("Redirecting to Login");
         navigate("/dashboard");
       } else {
+        dispatch(hideLoading());
         toast.error(response.data.message);
       }
     } catch (error) {
+      dispatch(hideLoading());
       toast.error("Something Went Wrong!");
     }
   };

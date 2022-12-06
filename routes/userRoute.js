@@ -4,7 +4,8 @@ const user = require('../Models/userModel'); //Importing Schema form Model
 const therapist = require('../Models/therapistModel'); //Importing Schema form Model
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const authmiddleware = require("../Middlewares/authMiddleware")
+const authmiddleware = require("../Middlewares/authMiddleware");
+
 
 
 // Register Route
@@ -94,29 +95,33 @@ router.post('/get-user-info-by-id', authmiddleware, async(req, res)=>{
 })
 
 //Apply Therapist Route
-router.post('/apply-therapist-account', async(req, res) => {
-   try{
-    const newTherapist = new therapist({...req.body, status: "pending"})
+router.post("/apply-therapist-account", authmiddleware, async (req, res) => {
+  try {
+    const newTherapist = new therapist({ ...req.body, status: "pending" });
     await newTherapist.save();
-    const adminUser = await user.findOne({isAdmin : true})
+    const adminUser = await user.findOne({ isAdmin: true });
 
     const unseenNotification = adminUser.unseenNotification;
     unseenNotification.push({
       type: "New-therapist-request",
       message: `${newTherapist.firstName} has Applied for a Therapist Account!`,
-      data : {
-        therapistId : newTherapist._id,
-        name: newTherapist.firstName+newTherapist.lastName
+      data: {
+        therapistId: newTherapist._id,
+        name: newTherapist.firstName + " " + newTherapist.lastName,
       },
-      onClickPath : "/admin/therapists"
-    })
-    await user.findByIdAndUpdate(adminUser._id, {unseenNotification})
-   } catch (error) {
-        return res.status(500).send({
-            message: "Error Occured in applying-therapist account",
-            success: false
-        })
-   }
-})
+      onClickPath: "/admin/therapists", 
+    });
+    await user.findByIdAndUpdate(adminUser._id, { unseenNotification });
+    return res.status(200).send({
+      message: "Successfully Applied Therapist Account!",
+      success: true,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error Occured in applying-therapist account", 
+      success: false,
+    });
+  }
+});
 
 module.exports = router;
