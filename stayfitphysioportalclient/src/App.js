@@ -8,11 +8,18 @@ import Dashboard from './Pages/Dashboard';
 import ProtectedRoute from './Components/ProtectedRoute';
 import PublicRoute from './Components/PublicRoute';
 import ApplyTherapist from './Components/ApplyTherapist';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const { loading } = useSelector((state) => state.alerts);
   return (
     <div className="App">
       <BrowserRouter>
+        {loading && (
+          <div className="main-loader">
+            <div class="spinner-border" role="status"></div>
+          </div>
+        )}
         <Toaster position="top-center" reverseOrder={false} />
         <Routes>
           <Route
@@ -44,7 +51,7 @@ function App() {
             path="/apply-therapist"
             element={
               <ProtectedRoute>
-                <ApplyTherapist/>
+                <ApplyTherapist />
               </ProtectedRoute>
             }
           />

@@ -1,0 +1,15 @@
+.main-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.spinner-border {
+    height: 7rem;
+    width: 7rem;
+}

@@ -1,11 +1,30 @@
 import { Button, Col, Form, Input, Row, TimePicker} from 'antd';
+import axios from 'axios';
 import React from 'react';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import DashboardLayout from './DashboardLayout';
+// import { useSelector } from "react-redux";
 
 export default function ApplyTherapist() {
-  const handleSubmit = async(event) => {
-    console.log("success", event);
-  }
+  // const { user } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const handleSubmit = async (values) => {
+    try {
+      //sending form value using axios post method
+      const response = await axios.post("/api/user/apply-therapist-account", values);
+      if (response.data.success) {
+        toast.success(response.data.message);
+        //navigating to Dashboard
+        toast.success("Redirecting to Login");
+        navigate("/dashboard");
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      toast.error("Something Went Wrong!");
+    }
+  };
     return (
       <div>
         <DashboardLayout>
@@ -52,7 +71,7 @@ export default function ApplyTherapist() {
               <Col span="8">
                 <Form.Item
                   label="Phone"
-                  name="Phone"
+                  name="phone"
                   rules={[{ required: true }]}
                 >
                   <Input placeholder="Phone Number..." />
@@ -61,7 +80,7 @@ export default function ApplyTherapist() {
               <Col span="8">
                 <Form.Item
                   label="Address"
-                  name="adress"
+                  name="address"
                   rules={[{ required: true }]}
                 >
                   <Input placeholder="Address..." />
@@ -85,7 +104,7 @@ export default function ApplyTherapist() {
               <Col span="8">
                 <Form.Item
                   label="Specialization"
-                  name="Specialization"
+                  name="specialization"
                   rules={[{ required: true }]}
                 >
                   <Input placeholder="Ex- Orthopedic, Pediatric, etc" />
@@ -94,7 +113,7 @@ export default function ApplyTherapist() {
               <Col span="8">
                 <Form.Item
                   label="Fees"
-                  name="consultancyFees"
+                  name="consaltancyFees"
                   rules={[{ required: true }]}
                 >
                   <Input placeholder="consultancyFees" />
@@ -111,7 +130,9 @@ export default function ApplyTherapist() {
               </Col>
             </Row>
             <div>
-              <Button type="primary" htmlType="submit" >Apply</Button>
+              <Button type="primary" htmlType="submit">
+                Apply
+              </Button>
             </div>
           </Form>
         </DashboardLayout>
