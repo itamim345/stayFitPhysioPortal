@@ -64,3 +64,9 @@
 .left-db-title {
     margin: 1rem  0 2rem 0;
 }
+
+/* Apply Therapist Form CSS */
+.hr-divider {
+    margin-top: 0;
+    margin-bottom: .4rem;
+}

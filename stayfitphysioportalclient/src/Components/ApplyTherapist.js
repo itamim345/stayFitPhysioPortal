@@ -1,24 +1,24 @@
-import { Col, Form, Input, Row, TimePicker} from 'antd';
+import { Button, Col, Form, Input, Row, TimePicker} from 'antd';
 import React from 'react';
 import DashboardLayout from './DashboardLayout';
 
 export default function ApplyTherapist() {
   const handleSubmit = async(event) => {
-    event.preventDefault();
-    const time = event.target.timing.value
-    console.log("success",time);
+    console.log("success", event);
   }
     return (
       <div>
         <DashboardLayout>
           <div>
-            <h4 className="text-center mb-3 text-danger">
+            <h4 className="text-center mb-3 text-primary">
               Apply as a Therapist
             </h4>
-            <hr />
+            <hr className="hr-divider" />
           </div>
-          <Form layout="vertical">
-            <h6>Personal Info:</h6>
+          <Form layout="vertical" onFinish={handleSubmit}>
+            <h6>
+              <i className="text-decoration-underline">Personal Info:</i>
+            </h6>
             <Row gutter={20}>
               <Col span="8">
                 <Form.Item
@@ -40,11 +40,11 @@ export default function ApplyTherapist() {
               </Col>
               <Col span="8">
                 <Form.Item
-                  label="Email"
-                  name="email"
+                  label="Language"
+                  name="language"
                   rules={[{ required: true }]}
                 >
-                  <Input placeholder="First Name..." />
+                  <Input placeholder="Language..." />
                 </Form.Item>
               </Col>
             </Row>
@@ -77,8 +77,10 @@ export default function ApplyTherapist() {
                 </Form.Item>
               </Col>
             </Row>
-            <hr />
-            <h6>Professional Info:</h6>
+            <hr className="hr-divider" />
+            <h6>
+              <i className="text-decoration-underline">Professional Info:</i>
+            </h6>
             <Row gutter={20}>
               <Col span="8">
                 <Form.Item
@@ -86,7 +88,7 @@ export default function ApplyTherapist() {
                   name="Specialization"
                   rules={[{ required: true }]}
                 >
-                  <Input placeholder="..." />
+                  <Input placeholder="Ex- Orthopedic, Pediatric, etc" />
                 </Form.Item>
               </Col>
               <Col span="8">
@@ -108,6 +110,9 @@ export default function ApplyTherapist() {
                 </Form.Item>
               </Col>
             </Row>
+            <div>
+              <Button type="primary" htmlType="submit" >Apply</Button>
+            </div>
           </Form>
         </DashboardLayout>
       </div>
