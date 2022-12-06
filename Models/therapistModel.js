@@ -12,7 +12,7 @@ const therapistSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    email: {
+    language: {
         type: String,
         required: true
     },
@@ -36,12 +36,8 @@ const therapistSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    startTiming: {
-        type: String,
-        required: true
-    },
-    endTiming: {
-        type: String,
+    timing: {
+        type: Array,
         required: true
     }
 },
