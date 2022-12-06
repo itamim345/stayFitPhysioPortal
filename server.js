@@ -23,11 +23,19 @@ app.use(express.json());
 app.use(cors());
 
 
-// Importing routes
+// Importing user routes
 const userRoute = require('./routes/userRoute');
 
-//Calling Router (here for register)
+//Importing Admin routes
+const adminRoute = require("./routes/adminRoute")
+
+//Calling Router (here for user)
 app.use('/api/user', userRoute);
+
+//Calling Router, (here for admin)
+app.use('/api/admin', adminRoute)
+
+
 
 
 
