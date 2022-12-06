@@ -6,18 +6,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import DashboardLayout from '../Components/DashboardLayout';
 import { hideLoading, showLoading } from '../Redux/alertReducers';
+import { setUser } from '../Redux/userSlice';
 
 export default function Notifications() {
     const {user} = useSelector((state) => state.user);
     const navigate = useNavigate();
     const dispatch = useDispatch()
+
     const markAllasSeen = async() => {
         try {
             dispatch(showLoading());
-            const response = await axios.post('./api/user/mark-all-notifications-seen', {userId : user._id})
+            const response = await axios.post("/api/user/mark-all-notifications-seen", {userId: user._id}, {
+              headers : {
+                Authorization : `Bearer ${localStorage.getItem("token")}`
+              }
+            })
             dispatch(hideLoading())
             if(response.data.success){
                 toast.success(response.data.message);
+                dispatch(setUser(response.data.data))
             }else {
                 toast.error(response.data.message);
             }
@@ -32,7 +39,7 @@ export default function Notifications() {
       <Tabs>
         <Tabs.TabPane tab="Unseen" key={0}>
           <div className="d-flex justify-content-end">
-            <p className="text-decoration-underline" onClick={() => markAllasSeen()}>Mark All As Seen</p>
+            <p className="text-decoration-underline cursor-p" onClick={() => markAllasSeen()}>Mark All As Seen</p>
           </div>
           {user?.unseenNotification.map((notify) => (
             <div className='card p-3 m-2' onClick={() => navigate(notify.onClickPath)}>

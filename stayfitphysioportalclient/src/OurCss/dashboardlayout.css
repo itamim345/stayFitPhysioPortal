@@ -70,3 +70,8 @@
     margin-top: 0;
     margin-bottom: .4rem;
 }
+
+/* Notification page css */
+.cursor-p {
+    cursor: pointer;
+}

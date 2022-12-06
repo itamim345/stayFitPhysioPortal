@@ -128,9 +128,11 @@ router.post("/mark-all-notifications-seen", authmiddleware, async (req, res) => 
   try{
     const User = await user.findOne({_id: req.body.userId})
     const unseenNotification = User.unseenNotification;
-    User.seenNotifications = unseenNotification;
+    const seenNotifications = User.seenNotifications;
+    seenNotifications.push(...unseenNotification)
     User.unseenNotification = [];
-    const updatedUser = await user.findByIdAndUpdate(user._id, User)
+    User.seenNotifications = seenNotifications;
+    const updatedUser = await User.save()
     updatedUser.pass = undefined;
     return res.status(200).send({
       message: "All notifications marked as seen",
@@ -159,7 +161,7 @@ router.post("/delete-all-notifications", authmiddleware, async (req, res) => {
     })
   } catch (error) {
     return res.status(500).send({
-      message: "Error Occured in applying-therapist account", 
+      message: "Error Occured in deleted notification", 
       success: false,
     });
   }
