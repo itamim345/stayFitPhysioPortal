@@ -33,12 +33,12 @@ export default function DashboardLayout(props) {
     },
     {
       name: "Users",
-      path: "/users",
+      path: "/admin/userlist",
       icon: "ri-file-user-line",
     },
     {
       name: "Therapists",
-      path: "/therapists",
+      path: "/admin/therapist-list",
       icon: "ri-shield-user-line",
     },
   ];
