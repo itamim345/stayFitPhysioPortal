@@ -2,6 +2,7 @@ import React from 'react';
 import '../OurCss/dashboardlayout.css'
 import {Link, useLocation, useNavigate} from "react-router-dom"
 import { useSelector } from "react-redux";
+import { Badge } from 'antd';
 
 export default function DashboardLayout(props) {
   const location = useLocation();
@@ -66,7 +67,7 @@ export default function DashboardLayout(props) {
             <div
               className="single-menu-item"
               onClick={() => {
-                localStorage.clear()
+                localStorage.clear();
                 navigate("/login");
               }}
             >
@@ -79,7 +80,10 @@ export default function DashboardLayout(props) {
           <div className="main-db-header">
             <div>Welcome to Stay Fit Physio Portal!</div>
             <div className="header-user">
-              <i className="ri-notification-3-line"></i>
+              <Badge count={user?.unseenNotification.length}>
+                <i className="ri-notification-3-line"></i>
+              </Badge>
+
               <Link to="/user-profile">{user?.name}</Link>
             </div>
           </div>
