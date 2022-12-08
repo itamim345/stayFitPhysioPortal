@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
@@ -10,10 +10,13 @@ export default function Header() {
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+            <Nav className="me-auto align-items-center">
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#link">Link</Nav.Link>
-              <div>button</div>
+              <div>
+                <Button as={Link} to="/register">Register</Button>
+                <Button as={Link} to="/login">Register</Button>
+              </div>
             </Nav>
           </Navbar.Collapse>
         </Container>
