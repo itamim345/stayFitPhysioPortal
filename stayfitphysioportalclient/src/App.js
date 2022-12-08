@@ -12,12 +12,14 @@ import { useSelector } from 'react-redux';
 import Notifications from './Pages/Notifications';
 import UserList from './Pages/Admin/UserList';
 import TherapistList from './Pages/Admin/TherapistList';
+import Header from './Pages/FrontPage/Header';
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
     <div className="App">
       <BrowserRouter>
+      <Header/>
         {loading && (
           <div className="main-loader">
             <div class="spinner-border" role="status"></div>
