@@ -12,14 +12,13 @@ import { useSelector } from 'react-redux';
 import Notifications from './Pages/Notifications';
 import UserList from './Pages/Admin/UserList';
 import TherapistList from './Pages/Admin/TherapistList';
-import Header from './Pages/FrontPage/Header';
+import FrontPage from './Pages/FrontPage/FrontPage';
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
     <div className="App">
       <BrowserRouter>
-      <Header/>
         {loading && (
           <div className="main-loader">
             <div class="spinner-border" role="status"></div>
@@ -27,6 +26,7 @@ function App() {
         )}
         <Toaster position="top-center" reverseOrder={false} />
         <Routes>
+          <Route path="/" element={<FrontPage/>}/>
           <Route
             path="/login"
             element={
@@ -43,7 +43,6 @@ function App() {
               </PublicRoute>
             }
           />
-          <Route path="/" element={<Home />} />
           <Route
             path="/dashboard"
             element={

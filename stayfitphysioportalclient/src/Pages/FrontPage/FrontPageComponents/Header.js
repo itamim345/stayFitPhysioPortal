@@ -12,7 +12,7 @@ export default function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto align-items-center">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
+              <Nav.Link href="/">Link</Nav.Link>
               <div>
                 <Button as={Link} to="/register">Register</Button>
                 <Button as={Link} to="/login">Register</Button>
