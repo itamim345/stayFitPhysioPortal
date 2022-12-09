@@ -3,14 +3,22 @@
     background: #1392ed;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: .2rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 .nav-area {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: .2rem 0
 }
-.nav-area .logo {
-    color: white;
+.nav-area .logo img {
+    background-color: white;
+    border-radius: 50%;
+    width: 3rem !important;
+    height: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .nav-area .menu a {
     color: white;
@@ -70,7 +78,12 @@
 }
 
 /**************** contact us css  ******************/
-.contact-us .contact-details{
+.contact-us {
     background: #dff9fb;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+/************* Footer-area css  ****************/
+.footer-area {
+    background: #000;
 }

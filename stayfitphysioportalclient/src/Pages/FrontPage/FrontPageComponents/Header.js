@@ -7,7 +7,7 @@ export default function Header() {
     <div id="header">
       <div class="nav-area container">
         <div className="logo">
-          <h3>Logo</h3>
+          <img src="https://i.ibb.co/HhbbLzr/logo.png" alt="" className='w-25' />
         </div>
         <div className="menu">
           <Link to="/">Home</Link>
