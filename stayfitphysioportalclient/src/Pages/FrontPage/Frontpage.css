@@ -1,12 +1,31 @@
+#header {
+    background: #1392ed;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: .2rem 0;
+}
 .nav-area {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.nav-area .logo {
+    color: white;
+}
 .nav-area .menu a {
     color: white;
+    text-decoration: none;
+    margin: 0 .4rem;
 }
 .nav-area button {
     border: none;
     margin: 0 .5rem;
+    color: white;
+    padding: .2rem 1rem;
+    border-radius: 5px;
+}
+.nav-area #btn-1 {
+    background: #054979;
+}
+.nav-area #btn-2 {
+    background: green;
 }
