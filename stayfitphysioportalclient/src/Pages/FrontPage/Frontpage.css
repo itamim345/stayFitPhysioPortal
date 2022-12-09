@@ -52,12 +52,19 @@
 }
 
 /******************** How It Works Area *********************/
-.how-it-works {
-    
+#howitworks {
+    background-color: #dff9fb;
 }
 .how-it-works .works-process {
     display: flex;
+    text-align: center;
+    gap: 2rem;
 }
 .how-it-works .works-process div{
     width: 33.3%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding: 2rem;
+}
+.how-it-works .works-process i {
+    font-size: 2rem;
 }
