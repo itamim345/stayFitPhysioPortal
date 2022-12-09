@@ -1,26 +1,27 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import '../Frontpage.css';
 
 export default function Header() {
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto align-items-center">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/">Link</Nav.Link>
-              <div>
-                <Button as={Link} to="/register">Register</Button>
-                <Button as={Link} to="/login">Register</Button>
-              </div>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+    <div id="header" className='bg-primary'>
+      <div class="nav-area container">
+        <div className="logo">
+          <h3>Logo</h3>
+        </div>
+        <div className="menu">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </div>
+        <div className="buttons">
+          <Link to="/register">
+            <button>Register</button>
+          </Link>
+          <Link to="/register">
+            <button>Register</button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

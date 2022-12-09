@@ -1,0 +1,12 @@
+.nav-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-area .menu a {
+    color: white;
+}
+.nav-area button {
+    border: none;
+    margin: 0 .5rem;
+}
