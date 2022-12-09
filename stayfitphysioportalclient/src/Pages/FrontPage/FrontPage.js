@@ -1,4 +1,5 @@
 import React from 'react';
+import AboutUs from './FrontPageComponents/AboutUs';
 import Header from './FrontPageComponents/Header';
 import HowItWorks from './FrontPageComponents/HowItWorks';
 import WelcomeArea from './FrontPageComponents/WelcomeArea';
@@ -10,6 +11,7 @@ export default function FrontPage() {
       <WelcomeArea/>
       <WhyPhysio/>
       <HowItWorks/>
+      <AboutUs/>
     </div>
   );
 }
