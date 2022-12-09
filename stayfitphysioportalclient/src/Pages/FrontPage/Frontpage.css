@@ -1,3 +1,4 @@
+/************* header area css *****************/
 #header {
     background: #1392ed;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -28,4 +29,19 @@
 }
 .nav-area #btn-2 {
     background: green;
+}
+
+/****************** welcome-area css *******************/
+.welcome-area {
+    display: flex;
+    gap: 2rem;
+    padding: 5rem 0;
+    align-items: center;
+}
+.welcome-area div {
+    width: 50%;
+}
+.welcome-area img {
+    width: 100%;
+    border-radius: 10px;
 }

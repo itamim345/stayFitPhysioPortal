@@ -4,9 +4,9 @@ import '../Frontpage.css'
 export default function WelcomeArea() {
   return (
     <div>
-      <section className="welcome-area">
+      <section className="welcome-area container">
         <div>
-          <img src="https://i.ibb.co/hm2dWfz/Banner.png" alt="welcome-img" />
+          <img src="https://i.ibb.co/tskPkS4/welcome-img-comp.jpg" alt="welcome-img" />
         </div>
         <div>
             <h2>Welcome to the StyeFit Physio Portal</h2>
