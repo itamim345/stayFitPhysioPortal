@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import DashboardLayout from '../../Components/DashboardLayout';
 import { hideLoading, showLoading } from '../../Redux/alertReducers';
+import "../../OurCss/common.css"
 
 export default function TherapistList() {
   const dispatch = useDispatch();
