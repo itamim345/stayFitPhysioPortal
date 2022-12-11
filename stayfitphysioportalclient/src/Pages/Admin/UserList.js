@@ -45,7 +45,7 @@ export default function UserList() {
       dataIndex: 'actions',
       render: (text, record)=> (
         <div className='d-flex'>
-          <em>Block</em>
+          <em className='cp-link'>Block</em>
         </div>
       )
     }
