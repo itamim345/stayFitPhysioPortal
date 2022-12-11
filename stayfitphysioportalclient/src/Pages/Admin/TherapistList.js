@@ -34,13 +34,7 @@ export default function TherapistList() {
     {
       title: "name",
       dataIndex: "name",
-      render: (text, record) => (
-        <p>{record.firstName}</p>
-      ),
-    },
-    {
-      title: "email",
-      dataIndex: "email",
+      render: (text, record) => <p>{record.firstName}</p>,
     },
     {
       title: "Phone",
@@ -55,7 +49,8 @@ export default function TherapistList() {
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          <em>Approve</em>
+          {record.status === "pending" && <em>Approve</em>}
+          {record.status === "approved" && <em>Block</em>}
         </div>
       ),
     },
