@@ -11,10 +11,10 @@ export default function TherapistList() {
   const [therapist, setTherapist] = useState([]); //Use State
   //useEfftect
   useEffect(() => {
-    getUserInfo();
+    getTherapistInfo();
   }, []);
 
-  const getUserInfo = async () => {
+  const getTherapistInfo = async () => {
     try {
       dispatch(showLoading());
       const response = await axios.get("/api/admin/get-all-therapists", {
@@ -25,6 +25,23 @@ export default function TherapistList() {
       dispatch(hideLoading());
       if (response.data.success) {
         setTherapist(response.data.data);
+      }
+    } catch (error) {
+      dispatch(hideLoading());
+    }
+  };
+
+  const changeTherapistStatus = async (record, status) => {
+    try {
+      dispatch(showLoading());
+      const response = await axios.post("/api/admin/change-therapist-status", {therapistId : record._id, userId : record.userId, status: status}, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      dispatch(hideLoading());
+      if (response.data.success) {
+        getTherapistInfo(response.data.data);
       }
     } catch (error) {
       dispatch(hideLoading());
@@ -50,8 +67,8 @@ export default function TherapistList() {
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          {record.status === "pending" && <em className='cp-link'>Approve</em>}
-          {record.status === "approved" && <em className='cp-link'>Block</em>}
+          {record.status === "pending" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Approved")}>Approve</em>}
+          {record.status === "approved" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Blocked")}>Block</em>}
         </div>
       ),
     },

@@ -13,6 +13,9 @@
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.left-db-admin {
+    background-color: #11023d !important;
+}
 .main-db {
     display: flex;
     flex-direction: column;
@@ -75,3 +78,4 @@
 .cursor-p {
     cursor: pointer;
 }
+

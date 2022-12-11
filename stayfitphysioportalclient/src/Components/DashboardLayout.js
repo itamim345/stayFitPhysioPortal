@@ -43,10 +43,11 @@ export default function DashboardLayout(props) {
     },
   ];
   const menuforRender = user?.isAdmin ? adminmenu : usermenu;
+  const condition = user?.isAdmin === true;
   return (
     <div>
       <div className="db-layout m-4">
-        <div className="left-db">
+        <div className={`left-db ${condition && "left-db-admin"}`}>
           <div className="left-db-title">
             <h4>StyFit Portal</h4>
           </div>
@@ -56,7 +57,7 @@ export default function DashboardLayout(props) {
               return (
                 <div
                   className={`single-menu-item ${
-                    isActive && `active-menu-item`
+                    isActive && `active-menu-item ` 
                   }`}
                 >
                   <i className={menuitem.icon}></i>
@@ -80,7 +81,10 @@ export default function DashboardLayout(props) {
           <div className="main-db-header">
             <div>Welcome to Stay Fit Physio Portal!</div>
             <div className="header-user">
-              <Badge count={user?.unseenNotification.length} onClick={ () => navigate('/notifications')}>
+              <Badge
+                count={user?.unseenNotification.length}
+                onClick={() => navigate("/notifications")}
+              >
                 <i className="ri-notification-3-line"></i>
               </Badge>
 
