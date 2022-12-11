@@ -11,7 +11,7 @@ router.get("/get-all-therapists", authmiddleware, async (req, res) => {
     return res.status(200).send({
         message: "Therapists fetched Successfully!",
         success: true,
-        data: doctors
+        data: therapists
     })
   } catch (error) {
     return res.status(500).send({
@@ -24,11 +24,11 @@ router.get("/get-all-therapists", authmiddleware, async (req, res) => {
 //Get Route for getting all users
 router.get("/get-all-users", authmiddleware, async (req, res) => {
   try {
-    const therapists = await user.find({})
+    const Users = await user.find({})
     return res.status(200).send({
         message: "Users fetched Successfully!",
         success: true,
-        data: doctors
+        data: Users
     })
   } catch (error) {
     return res.status(500).send({
