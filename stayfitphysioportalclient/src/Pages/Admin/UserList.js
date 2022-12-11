@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import DashboardLayout from '../../Components/DashboardLayout';
 import {showLoading, hideLoading} from '../../Redux/alertReducers'
+import "../../OurCss/common.css";
 
 export default function UserList() {
   const dispatch = useDispatch();
