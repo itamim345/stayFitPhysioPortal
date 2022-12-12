@@ -7,7 +7,7 @@ export default function Dashboard() {
 
   const getData = async()=>{
     try {
-      const response = await axios.post("/api/user/get-user-info-by-id", {}, {
+      const response = await axios.get("/api/user/get-all-approved-therapists", {
         headers : {
           Authorization : 'Bearer ' + localStorage.getItem('token')
         }
@@ -23,8 +23,6 @@ export default function Dashboard() {
   }, []);
 
   return <DashboardLayout>
-      <div className='text-center mt-3'>
-        <img src="https://i.ibb.co/kc0yTB3/dashboard-img-removebg-preview.png" alt="dashboard-img" className='w-75 rounded' />
-      </div>
+      
     </DashboardLayout>
 }

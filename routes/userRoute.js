@@ -168,4 +168,21 @@ router.post("/delete-all-notifications", authmiddleware, async (req, res) => {
 });
 
 
+//Get Route for getting all therapists
+router.get("/get-all-approved-therapists", authmiddleware, async (req, res) => {
+  try {
+    const therapists = await therapist.find({status: "Approved"});
+    return res.status(200).send({
+      message: "Therapists fetched Successfully!",
+      success: true,
+      data: therapists,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error Occured in fetching Therapists",
+      success: false,
+    });
+  }
+});
+
 module.exports = router;
