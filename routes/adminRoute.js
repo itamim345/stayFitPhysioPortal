@@ -51,6 +51,9 @@ router.post("/change-therapist-status", authmiddleware, async (req, res) => {
       message: `Your Therapist accoutn has been ${status}!`,
       onClickPath: "/notfifications",
     });
+
+    //Changing the isDoctor status
+    User.isTherapist = status === "Approved" ? true : false; 
     await User.save();
 
     return res.status(200).send({
