@@ -75,9 +75,9 @@ export default function Profile() {
 
   return (
     <DashboardLayout>
-        <h5 className='text-center text-primary'>Therapist Profile</h5>
-        <hr></hr>
-        <TherapistForm onFinish={handleSubmit}/>
+      <h5 className="text-center text-primary">Therapist Profile</h5>
+      <hr></hr>
+      {therapist && <TherapistForm onFinish={handleSubmit} initialValues={therapist} />}
     </DashboardLayout>
   );
 }

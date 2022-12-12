@@ -1,10 +1,10 @@
 import { Button, Col, Form, Input, Row, TimePicker } from 'antd';
 import React from 'react';
 
-export default function TherapistForm({handleSubmit}) {
+export default function TherapistForm({handleSubmit, initialValues}) {
   return (
     <div>
-      <Form layout="vertical" onFinish={handleSubmit}>
+      <Form layout="vertical" onFinish={handleSubmit} initialValues={initialValues}>
         <h6>
           <i className="text-decoration-underline">Personal Info:</i>
         </h6>
@@ -85,7 +85,7 @@ export default function TherapistForm({handleSubmit}) {
               <Input placeholder="consultancyFees" />
             </Form.Item>
           </Col>
-          <Col span="8">
+          {/* <Col span="8">
             <Form.Item
               label="Timing"
               name="timing"
@@ -93,7 +93,7 @@ export default function TherapistForm({handleSubmit}) {
             >
               <TimePicker.RangePicker />
             </Form.Item>
-          </Col>
+          </Col> */}
         </Row>
         <div>
           <Button type="primary" htmlType="submit">
