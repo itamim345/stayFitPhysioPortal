@@ -72,7 +72,7 @@ export default function TherapistList() {
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          {record.status === "Pending" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Approved")}>Approve</em>}
+          {record.status === "pending" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Approved")}>Approve</em>}
           {record.status === "Approved" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Blocked")}>Block</em>}
         </div>
       ),

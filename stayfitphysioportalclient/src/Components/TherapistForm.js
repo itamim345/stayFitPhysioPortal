@@ -1,10 +1,10 @@
 import { Button, Col, Form, Input, Row, TimePicker } from 'antd';
 import React from 'react';
 
-export default function TherapistForm({handleSubmit, initialValues}) {
+export default function TherapistForm({onFinish, initialValues}) {
   return (
     <div>
-      <Form layout="vertical" onFinish={handleSubmit} initialValues={initialValues}>
+      <Form layout="vertical" onFinish={onFinish} initialValues={initialValues}>
         <h6>
           <i className="text-decoration-underline">Personal Info:</i>
         </h6>

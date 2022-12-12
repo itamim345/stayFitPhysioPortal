@@ -14,12 +14,12 @@ export default function Profile() {
     const navigate = useNavigate();
     const params = useParams()
     const [therapist, setTherapist] = useState(null) 
-    const handleSubmit = async (values) => {
+    const onFinish = async (values) => {
       try {
         dispatch(showLoading());
         //sending form value using axios post method
         const response = await axios.post(
-          "/api/user/apply-therapist-account",
+          "/api/therapist/update-profile",
           {
             ...values,
             userId: user._id,
@@ -40,6 +40,7 @@ export default function Profile() {
           toast.error(response.data.message);
         }
       } catch (error) {
+        console.log(error);
         dispatch(hideLoading());
         toast.error("Something Went Wrong!");
       }
@@ -77,7 +78,7 @@ export default function Profile() {
     <DashboardLayout>
       <h5 className="text-center text-primary">Therapist Profile</h5>
       <hr></hr>
-      {therapist && <TherapistForm onFinish={handleSubmit} initialValues={therapist} />}
+      {therapist && <TherapistForm onFinish={onFinish} initialValues={therapist} />}
     </DashboardLayout>
   );
 }
