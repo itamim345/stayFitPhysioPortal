@@ -41,23 +41,25 @@ router.get("/get-all-users", authmiddleware, async (req, res) => {
 // Post method to change doctor status
 router.post("/change-therapist-status", authmiddleware, async (req, res) => {
   try {
-    const {therapistId, status, userId} = req.body;
+    const { therapistId, status, userId } = req.body;
     const therapists = await therapist.findByIdAndUpdate(therapistId, {status} );
-    
-    const User = await user.findOne({_id: userId})
+
+    const User = await user.findOne({ _id: therapists.userId });
     const unseenNotification = User.unseenNotification;
-    unseenNotification.push({
+    unseenNotification.push({ 
       type: "New-therapist-request-changed",
       message: `Your Therapist accoutn has been ${status}!`,
       onClickPath: "/notfifications",
     });
-    await user.findByIdAndUpdate(user._id, { unseenNotification });
-  
-    res.status(200).send({
-      message: "Therapist status updated successfully!",
-      data: therapists
+    await User.save();
+
+    return res.status(200).send({
+      message: "Your Therapist Status Updated!",
+      success: true,
+      data: therapists,
     })
   } catch (error) {
+    console.log(error)
     return res.status(500).send({
       message: "Error Occured in fetching users",
       success: false,

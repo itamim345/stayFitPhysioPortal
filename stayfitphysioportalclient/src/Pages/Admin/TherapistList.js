@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import DashboardLayout from '../../Components/DashboardLayout';
 import { hideLoading, showLoading } from '../../Redux/alertReducers';
+import {toast} from "react-hot-toast"
 import "../../OurCss/common.css"
 
 export default function TherapistList() {
@@ -34,16 +35,20 @@ export default function TherapistList() {
   const changeTherapistStatus = async (record, status) => {
     try {
       dispatch(showLoading());
-      const response = await axios.post("/api/admin/change-therapist-status", {therapistId : record._id, userId : record.userId, status: status}, {
+      const response = await axios.post("/api/admin/change-therapist-status",
+       {therapistId : record._id, userId : record.userId, status: status},
+       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
       dispatch(hideLoading());
       if (response.data.success) {
-        getTherapistInfo(response.data.data);
+        toast.success(response.data.message);
+        getTherapistInfo()
       }
     } catch (error) {
+      toast.error("Error in status changing")
       dispatch(hideLoading());
     }
   };
@@ -59,16 +64,16 @@ export default function TherapistList() {
       dataIndex: "phone",
     },
     {
-      title: "status",
+      title: "Status",
       dataIndex: "status",
     },
     {
-      title: "actions",
+      title: "Actions",
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          {record.status === "pending" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Approved")}>Approve</em>}
-          {record.status === "approved" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Blocked")}>Block</em>}
+          {record.status === "Pending" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Approved")}>Approve</em>}
+          {record.status === "Approved" && <em className='cp-link' onClick={() => changeTherapistStatus(record, "Blocked")}>Block</em>}
         </div>
       ),
     },
