@@ -35,7 +35,7 @@ export default function Dashboard() {
   return <DashboardLayout>
       <Row gutter={15}>
           {therapists.map((therapist) => (
-            <Col span={8}>
+            <Col span={6}>
               <Therapist therapist={therapist}/>
             </Col>
           ))}

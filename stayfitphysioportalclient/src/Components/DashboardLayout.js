@@ -103,7 +103,7 @@ export default function DashboardLayout(props) {
                 count={user?.unseenNotification.length}
                 onClick={() => navigate("/notifications")}
               >
-                <i className="ri-notification-3-line"></i>
+                <i className="ri-notification-3-line cursor-p"></i>
               </Badge>
 
               <Link to="/user-profile">{user?.name}</Link>
