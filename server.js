@@ -29,11 +29,17 @@ const userRoute = require('./routes/userRoute');
 //Importing Admin routes
 const adminRoute = require("./routes/adminRoute")
 
+//Importing therapist routes
+const therapistRoute = require("./routes/therapistRoute")
+
 //Calling Router (here for user)
 app.use('/api/user', userRoute);
 
 //Calling Router, (here for admin)
 app.use('/api/admin', adminRoute)
+
+//Calling Router, (here for doctor)
+app.use("/api/therapist", therapistRoute);
 
 
 
