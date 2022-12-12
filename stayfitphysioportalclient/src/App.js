@@ -13,6 +13,7 @@ import Notifications from './Pages/Notifications';
 import UserList from './Pages/Admin/UserList';
 import TherapistList from './Pages/Admin/TherapistList';
 import FrontPage from './Pages/FrontPage/FrontPage';
+import Profile from './Pages/Doctor/Profile';
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -80,6 +81,15 @@ function App() {
             element={
               <ProtectedRoute>
                 <TherapistList/>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/therapist/profile/:therapistId"
+            element={
+              <ProtectedRoute>
+                <Profile/>
               </ProtectedRoute>
             }
           />
