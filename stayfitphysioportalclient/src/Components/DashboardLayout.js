@@ -6,8 +6,9 @@ import { Badge } from 'antd';
 
 export default function DashboardLayout(props) {
   const location = useLocation();
-  const navigate = useNavigate()
-  const {user} = useSelector((state) => state.user)
+  const navigate = useNavigate();
+  const {user} = useSelector((state) => state.user);
+  //const userId = user._id;
   const usermenu = [
     {
       name: "Dashboard",
@@ -42,8 +43,25 @@ export default function DashboardLayout(props) {
       icon: "ri-shield-user-line",
     },
   ];
-  const menuforRender = user?.isAdmin ? adminmenu : usermenu;
-  const condition = user?.isAdmin === true;
+  const therapistmenu = [
+    {
+      name: "Dashboard",
+      path: "/dashboard",
+      icon: "ri-dashboard-line",
+    },
+    {
+      name: "Appointment",
+      path: "/appointment",
+      icon: "ri-todo-line",
+    },
+    {
+      name: "Profile",
+      path: `/therapist/profile/${user?._id}`,
+      icon: "ri-shield-user-line",
+    },
+  ];
+  const menuforRender = user?.isAdmin ? adminmenu : user?.isTherapist ? therapistmenu : usermenu; 
+  const condition = user?.isAdmin === true; //to add dbleft class for bg-change as adming
   return (
     <div>
       <div className="db-layout m-4">
