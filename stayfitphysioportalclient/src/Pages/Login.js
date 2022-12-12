@@ -53,7 +53,7 @@ export default function Login() {
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name="email" />
+            <Form.Control type="email" placeholder="Enter email" name="email" required />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -62,6 +62,7 @@ export default function Login() {
               type="password"
               placeholder="Password"
               name="password"
+              required
             />
           </Form.Group>
           <Button variant="success" type="submit">
