@@ -13,8 +13,13 @@
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+/* left db bg only for admin */
 .left-db-admin {
-    background-color: #11023d !important;
+    background-color: #11023d !important; 
+}
+/* left db bg only for therapist  */
+.left-db-therapist {
+    background-color: #387c57 !important;
 }
 .main-db {
     display: flex;

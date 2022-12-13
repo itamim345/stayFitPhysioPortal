@@ -47,7 +47,12 @@ export default function DashboardLayout(props) {
     {
       name: "Home",
       path: "/dashboard-home",
-      icon: "ri-dashboard-line",
+      icon: "ri-home-smile-line",
+    },
+    {
+      name: "Appointment",
+      path: "/appointment",
+      icon: "ri-todo-line",
     },
     {
       name: "Profile",
@@ -56,11 +61,12 @@ export default function DashboardLayout(props) {
     },
   ];
   const menuforRender = user?.isAdmin ? adminmenu : user?.isTherapist ? therapistmenu : usermenu; 
-  const condition = user?.isAdmin === true; //to add dbleft class for bg-change as adming
+  const condition1 = user?.isAdmin === true; //to add dbleft class for bg-change as adming
+  const condition2 = user?.isTherapist === true; //to add dbleft class for bg-change as adming
   return (
     <div>
       <div className="db-layout m-4">
-        <div className={`left-db ${condition && "left-db-admin"}`}>
+        <div className={`left-db ${condition1 && "left-db-admin"} ${condition2 && "left-db-therapist"}`}>
           <div className="left-db-title">
             <h4>StyFit Portal</h4>
           </div>
