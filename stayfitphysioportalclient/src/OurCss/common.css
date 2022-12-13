@@ -6,4 +6,11 @@
 .single-therapist {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: .5rem;
+    cursor: pointer;
+}
+.single-therapist p {
+    margin: .2rem 0;
+}
+.therapist-heading {
+    font-size: .9rem !important;
 }
