@@ -45,14 +45,9 @@ export default function DashboardLayout(props) {
   ];
   const therapistmenu = [
     {
-      name: "Dashboard",
-      path: "/dashboard",
+      name: "Home",
+      path: "/dashboard-home",
       icon: "ri-dashboard-line",
-    },
-    {
-      name: "Appointment",
-      path: "/appointment",
-      icon: "ri-todo-line",
     },
     {
       name: "Profile",
