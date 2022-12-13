@@ -14,6 +14,7 @@ import UserList from './Pages/Admin/UserList';
 import TherapistList from './Pages/Admin/TherapistList';
 import FrontPage from './Pages/FrontPage/FrontPage';
 import Profile from './Pages/Doctor/Profile';
+import DashboardHome from './Components/DashboardHome';
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -27,7 +28,7 @@ function App() {
         )}
         <Toaster position="top-center" reverseOrder={false} />
         <Routes>
-          <Route path="/" element={<FrontPage/>}/>
+          <Route path="/" element={<FrontPage />} />
           <Route
             path="/login"
             element={
@@ -64,7 +65,7 @@ function App() {
             path="/notifications"
             element={
               <ProtectedRoute>
-                <Notifications/>
+                <Notifications />
               </ProtectedRoute>
             }
           />
@@ -72,7 +73,7 @@ function App() {
             path="/admin/userlist"
             element={
               <ProtectedRoute>
-                <UserList/>
+                <UserList />
               </ProtectedRoute>
             }
           />
@@ -80,7 +81,7 @@ function App() {
             path="/admin/therapist-list"
             element={
               <ProtectedRoute>
-                <TherapistList/>
+                <TherapistList />
               </ProtectedRoute>
             }
           />
@@ -89,7 +90,16 @@ function App() {
             path="/therapist/profile/:therapistId"
             element={
               <ProtectedRoute>
-                <Profile/>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/dashboard-home"
+            element={
+              <ProtectedRoute>
+                <DashboardHome/>
               </ProtectedRoute>
             }
           />
