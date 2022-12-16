@@ -11,7 +11,12 @@ export default function DashboardLayout(props) {
   //const userId = user._id;
   const usermenu = [
     {
-      name: "Dashboard",
+      name: "Home",
+      path: "/dashboard-home",
+      icon: "ri-home-smile-line",
+    },
+    {
+      name: "Therapists",
       path: "/dashboard",
       icon: "ri-dashboard-line",
     },
@@ -24,7 +29,7 @@ export default function DashboardLayout(props) {
       name: "Apply Therapist",
       path: "/apply-therapist",
       icon: "ri-user-search-line",
-    }
+    },
   ];
   const adminmenu = [
     {
