@@ -78,7 +78,7 @@ export default function Registration() {
                 name="password"
                 required
               />
-              <i> password should be minimum 6characters</i>
+              
             </Form.Group>
             <Button variant="primary" type="submit">
               Register
