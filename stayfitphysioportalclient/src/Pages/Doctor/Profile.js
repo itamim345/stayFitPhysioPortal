@@ -19,7 +19,7 @@ export default function Profile() {
         dispatch(showLoading());
         //sending form value using axios post method
         const response = await axios.post(
-          "/api/therapist/update-profile",
+          '/api/therapist/update-therapist-profile',
           {
             ...values,
             userId: user._id,

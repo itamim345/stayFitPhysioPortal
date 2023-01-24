@@ -22,14 +22,14 @@ router.post("/get-therapist-info-by-user-id", authmiddleware, async (req, res) =
 });
 
 //Post method to update therapist Profile
-router.post("/update-profile", authmiddleware, async (req, res) => {
+router.post("/update-therapist-profile", authmiddleware, async (req, res) => {
   try {
     const therapists = await therapist.findOneAndUpdate(
-      {userId: request.body.userId},
+      { userId: req.body.userId },
       req.body
     );
     return res.status(200).send({
-      success: true, 
+      success: true,
       data: therapists,
       message: "therapist Profile Updated!",
     });
