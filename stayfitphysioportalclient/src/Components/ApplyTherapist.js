@@ -8,6 +8,7 @@ import DashboardLayout from './DashboardLayout';
 import { useSelector } from "react-redux";
 import { hideLoading, showLoading } from "../Redux/alertReducers";
 import TherapistForm from './TherapistForm';
+import moment from 'moment';
 
 export default function ApplyTherapist() {
   const { user } = useSelector((state) => state.user);
@@ -19,7 +20,11 @@ export default function ApplyTherapist() {
       //sending form value using axios post method
       const response = await axios.post("/api/user/apply-therapist-account", {
         ...values,
-        userId: user._id
+        userId: user._id,
+        timing: [
+              moment(values.timing[0]).format("HH:mmm"),
+              moment(values.timing[1]).format("HH:mmm")
+            ]
       },
       {
         headers : {
@@ -49,7 +54,7 @@ export default function ApplyTherapist() {
             </h4>
             <hr className="hr-divider" />
           </div>
-          <TherapistForm onFinish={handleSubmit}/>
+          <TherapistForm onFinish={handleSubmit} />
         </DashboardLayout>
       </div>
     );

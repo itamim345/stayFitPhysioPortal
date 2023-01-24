@@ -1,10 +1,21 @@
 import { Button, Col, Form, Input, Row, TimePicker } from 'antd';
+import moment from 'moment';
 import React from 'react';
 
-export default function TherapistForm({onFinish, initialValues}) {
+export default function TherapistForm({onFinish,initialValues}) {
   return (
     <div>
-      <Form layout="vertical" onFinish={onFinish} initialValues={initialValues}>
+      <Form
+        layout="vertical"
+        onFinish={onFinish}
+        initialValues={{
+          ...initialValues,
+          timing: [
+            moment(initialValues.timing[0], "HH:mm"),
+            moment(initialValues.timing[1], "HH:mm"),
+          ],
+        }}
+      >
         <h6>
           <i className="text-decoration-underline">Personal Info:</i>
         </h6>
@@ -85,15 +96,15 @@ export default function TherapistForm({onFinish, initialValues}) {
               <Input placeholder="consultancyFees" />
             </Form.Item>
           </Col>
-          {/* <Col span="8">
+          <Col span="8">
             <Form.Item
               label="Timing"
               name="timing"
               rules={[{ required: true }]}
             >
-              <TimePicker.RangePicker />
+              <TimePicker.RangePicker format="HH:mm" />
             </Form.Item>
-          </Col> */}
+          </Col>
         </Row>
         <div>
           <Button type="primary" htmlType="submit">

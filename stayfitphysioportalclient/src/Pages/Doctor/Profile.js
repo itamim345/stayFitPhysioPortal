@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { hideLoading, showLoading } from "../../Redux/alertReducers";
 import axios from "axios";
 import toast from "react-hot-toast";
+import moment from "moment";
 
 export default function Profile() {
     const { user } = useSelector((state) => state.user);
@@ -23,6 +24,10 @@ export default function Profile() {
           {
             ...values,
             userId: user._id,
+            timing: [
+              moment(values.timing[0]).format("HH:mmm"),
+              moment(values.timing[1]).format("HH:mmm")
+            ]
           },
           {
             headers: {
