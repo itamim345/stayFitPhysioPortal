@@ -10,6 +10,7 @@ export default function Therapist({therapist}) {
         <p><strong>Phone:</strong> {therapist.phone}</p>
         <p><strong>Experience:</strong> {therapist.experience} yrs.</p>
         <p><strong>Fees:</strong> {therapist.consaltancyFees}</p>
+        <p><strong>Timing:</strong> {therapist.timing[0]} - {therapist.timing[1]}</p>
       </div>
     </div>
   );

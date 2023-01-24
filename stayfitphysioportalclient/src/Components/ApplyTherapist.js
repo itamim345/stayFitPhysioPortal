@@ -22,8 +22,8 @@ export default function ApplyTherapist() {
         ...values,
         userId: user._id,
         timing: [
-              moment(values.timing[0]).format("HH:mmm"),
-              moment(values.timing[1]).format("HH:mmm")
+              moment(values.timing[0]).format("HH:mm"),
+              moment(values.timing[1]).format("HH:mm")
             ]
       },
       {
