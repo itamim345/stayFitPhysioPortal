@@ -10,10 +10,12 @@ export default function TherapistForm({onFinish,initialValues}) {
         onFinish={onFinish}
         initialValues={{
           ...initialValues,
-          timing: [
-            moment(initialValues.timing[0], "HH:mm"),
-            moment(initialValues.timing[1], "HH:mm"),
-          ],
+          ...(initialValues && {
+            timing: [
+            moment(initialValues?.timing[0], "HH:mm"),
+            moment(initialValues?.timing[1], "HH:mm"),
+          ]
+          })
         }}
       >
         <h6>
