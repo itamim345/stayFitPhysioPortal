@@ -21,6 +21,23 @@ router.post("/get-therapist-info-by-user-id", authmiddleware, async (req, res) =
   }
 });
 
+
+router.post("/get-therapist-info-by-id", authmiddleware, async (req, res) => {
+  try {
+    let findSingleTherapist = await therapist.findOne({ _id: req.body.therapistId });
+    return res.status(200).send({
+      message: " single therapist info fetched!",
+      success: true,
+      data: findSingleTherapist
+    });
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error to get therapist info",
+      success: false,
+    });
+  }
+});
+
 //Post method to update therapist Profile
 router.post("/update-therapist-profile", authmiddleware, async (req, res) => {
   try {
