@@ -17,7 +17,7 @@ export default function BookAppointment() {
     const [therapist, setTherapist] = useState(null)
     const [isAvailable, setIsavailable] = useState(false);
     const [date, setDate] = useState()
-    const [selectedTiming, setSelectedTiming] = useState()
+    const [time, setTime] = useState()
     const params = useParams();
     const dispatch = useDispatch()
 
@@ -56,7 +56,7 @@ export default function BookAppointment() {
              therapistId: params.therapistId,
              userId: user._id,
              date: date,
-             selectedTiming: selectedTiming,
+             time: time,
              therapistInfo: therapist,
              userInfo : user
            },
@@ -95,10 +95,7 @@ export default function BookAppointment() {
           </p>
           <div>
             <DatePicker format="DD-MM-YYYY" className="mb-2 w-100" onClick={(value) =>setDate(moment(value).format("DD-MM-YYYY")) }/>
-            <TimePicker.RangePicker format="HH:mm" onChange={(values) => setSelectedTiming([
-                moment(values[0].format("HH:mm")),
-                moment(values[1].format("HH:mm"))
-            ])}/>
+            <TimePicker format="HH:mm" onChange={(value) => setTime(moment(value.format("HH:mm")))}/>
           </div>
           <button className="btn btn-primary btn-sm mt-2 w-100">Check Availability</button>
           <button className="btn btn-danger btn-sm mt-2 w-100" onClick={bookNow}>BOOK NOW</button>
