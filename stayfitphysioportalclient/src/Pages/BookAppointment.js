@@ -95,7 +95,7 @@ export default function BookAppointment() {
           </p>
           <div>
             <DatePicker format="DD-MM-YYYY" className="mb-2 w-100" onClick={(value) =>setDate(moment(value).format("DD-MM-YYYY")) }/>
-            <TimePicker format="HH:mm" onChange={(value) => setTime(moment(value).format("HH:mm"))}/>
+            <TimePicker format="hh:mm" onChange={(value) => setTime(moment(value).format("hh:mm"))}/>
           </div>
           <button className="btn btn-primary btn-sm mt-2 w-100">Check Availability</button>
           <button className="btn btn-danger btn-sm mt-2 w-100" onClick={bookNow}>BOOK NOW</button>
