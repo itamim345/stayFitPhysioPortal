@@ -5,6 +5,7 @@ const therapist = require('../Models/therapistModel'); //Importing Schema form M
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authmiddleware = require("../Middlewares/authMiddleware");
+const Appointment = require('../Models/appointmentModel')
 
 
 
@@ -180,6 +181,32 @@ router.get("/get-all-approved-therapists", authmiddleware, async (req, res) => {
   } catch (error) {
     return res.status(500).send({
       message: "Error Occured in fetching Therapists",
+      success: false,
+    });
+  }
+});
+
+
+router.post("/book-appointment", authmiddleware, async (req, res) => {
+  try {
+    req.body.status = "pending";
+    const newAppointment = new Appointment(req.body);
+    await newAppointment.save();
+    //Finding therapist based on his user ID
+    const User = await user.findOne({_id: req.body.therapistInfo.userId});
+    User.unseenNotification.push({
+      type: "new-appointment-request",
+      message: `An appointment request from ${req.body.userInfo.name}`,
+      onClickPath : "/therapist/appointments"
+    })
+    await User.save();
+    return res.status(200).send({
+      success: true,
+      message: "appointment Booked!",
+    });
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error to book appointment",
       success: false,
     });
   }

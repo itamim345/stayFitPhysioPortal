@@ -4,11 +4,11 @@ const appoinmentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    doctorId: {
+    therapistId: {
         type: String,
         required: true
     },
-    doctorInfo: {
+    therapistInfo: {
         type: Object,
         required: true
     },
@@ -35,4 +35,4 @@ const appoinmentSchema = new mongoose.Schema({
 });
 
 const appoinmentModel = mongoose.model("appointment", appoinmentSchema);
-module.export = appoinmentModel;
+module.exports = appoinmentModel;
