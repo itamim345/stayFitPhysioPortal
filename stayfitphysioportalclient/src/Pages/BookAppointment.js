@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 import moment from "moment";
 import "../OurCss/common.css"
 import { DatePicker, TimePicker } from "antd";
+import dayjs from "dayjs"
 
 export default function BookAppointment() {
     const {user} = useSelector((state) => state.user) 
@@ -78,6 +79,36 @@ export default function BookAppointment() {
        } 
     }
 
+    const checkAvailability = async () => {
+       try {
+         dispatch(showLoading());
+         const response = await axios.post(
+           "/api/user/check-booking-availability",
+           {
+             therapistId: params.therapistId,
+             date: date,
+             time: time
+           },
+           {
+             headers: {
+               Authorization: `Bearer ${localStorage.getItem("token")}`,
+             },
+           }
+         );
+
+         dispatch(hideLoading());
+         if (response.data.success) {
+           toast.success(response.data.message)
+         }else {
+            toast.error(response.data.message)
+         }
+       } catch (error) {
+         console.log(error);
+         toast.error("Something wrong here!");
+         dispatch(hideLoading());
+       } 
+    }
+
     useEffect(() => {
       getTherapistData();
     }, []);
@@ -94,10 +125,10 @@ export default function BookAppointment() {
             {therapist.timing[1]}
           </p>
           <div>
-            <DatePicker format="DD-MM-YYYY" className="mb-2 w-100" onClick={(value) =>setDate(moment(value).format("DD-MM-YYYY")) }/>
-            <TimePicker format="hh:mm" onChange={(value) => setTime(moment(value).format("hh:mm"))}/>
+            <DatePicker format="DD-MM-YYYY" className="mb-2 w-100" onChange={(val) => setDate(moment(val).format("DD-MM-YYYY"))}/>
+            <TimePicker format="hh:mm" onChange={(val) => setTime(dayjs(val).format("hh:mm"))}/>
           </div>
-          <button className="btn btn-primary btn-sm mt-2 w-100">Check Availability</button>
+          <button className="btn btn-primary btn-sm mt-2 w-100" onClick={checkAvailability}>Check Availability</button>
           <button className="btn btn-danger btn-sm mt-2 w-100" onClick={bookNow}>BOOK NOW</button>
         </div>
       )}

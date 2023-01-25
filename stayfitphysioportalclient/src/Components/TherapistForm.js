@@ -104,7 +104,7 @@ export default function TherapistForm({onFinish,initialValues}) {
               name="timing"
               rules={[{ required: true }]}
             >
-              <TimePicker.RangePicker format="HH:mm" />
+              <TimePicker.RangePicker format="hh:mm" />
             </Form.Item>
           </Col>
         </Row>

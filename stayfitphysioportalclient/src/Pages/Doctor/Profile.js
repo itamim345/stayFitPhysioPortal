@@ -25,8 +25,8 @@ export default function Profile() {
             ...values,
             userId: user._id,
             timing: [
-              moment(values.timing[0]).format("HH:mm"),
-              moment(values.timing[1]).format("HH:mm"),
+              moment(values.timing[0]).format("hh:mm"),
+              moment(values.timing[1]).format("hh:mm"),
             ],
           },
           {

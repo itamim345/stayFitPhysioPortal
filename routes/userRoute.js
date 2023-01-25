@@ -5,7 +5,9 @@ const therapist = require('../Models/therapistModel'); //Importing Schema form M
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authmiddleware = require("../Middlewares/authMiddleware");
-const Appointment = require('../Models/appointmentModel')
+const Appointment = require('../Models/appointmentModel');
+const moment = require("moment");
+const dayjs = require("dayjs");
 
 
 
@@ -186,24 +188,62 @@ router.get("/get-all-approved-therapists", authmiddleware, async (req, res) => {
   }
 });
 
-
+// Post route to book appointment
 router.post("/book-appointment", authmiddleware, async (req, res) => {
   try {
     req.body.status = "pending";
+    req.body.date = moment(req.body.date, "DD-MM-YYYY").toISOString();
+    req.body.time = moment(req.body.time, "hh:mm").toISOString();
     const newAppointment = new Appointment(req.body);
     await newAppointment.save();
     //Finding therapist based on his user ID
-    const User = await user.findOne({_id: req.body.therapistInfo.userId});
+    const User = await user.findOne({ _id: req.body.therapistInfo.userId });
     User.unseenNotification.push({
       type: "new-appointment-request",
       message: `An appointment request from ${req.body.userInfo.name}`,
-      onClickPath : "/therapist/appointments"
-    })
+      onClickPath: "/therapist/appointments",
+    });
     await User.save();
     return res.status(200).send({
       success: true,
       message: "appointment Booked!",
     });
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error to book appointment",
+      success: false,
+    });
+  }
+});
+
+
+router.post("/check-booking-availability", authmiddleware, async (req, res) => {
+  try {
+    const date = moment(req.body.date, 'DD-MM-YYYY').toISOString();
+    const fromTime = moment(req.body.time, "hh:mm").subtract(60, 'minutes').toISOString();
+    const toTime = moment(req.body.time, "hh:mm").add(60, 'm');
+    const therapistId = req.body.therapistId;
+    
+    const appointments = await Appointment.find({
+      therapistId,
+      date,
+      time: {$gte: fromTime, $lte: toTime},
+    })
+
+    if(appointments.length > 0){
+      return res.status(200).send({
+        success: false,
+        message: "Appointment Not Available!",
+      })
+    }else {
+      return res.status(200).send({
+        success: true,
+        message: "appointment Available",
+        data: toTime
+      });
+    }
+
+    
   } catch (error) {
     return res.status(500).send({
       message: "Error to book appointment",
