@@ -49,6 +49,7 @@ export default function BookAppointment() {
     };
 
     const bookNow = async () => {
+        setIsavailable(false)
        try {
          dispatch(showLoading());
          const response = await axios.post(
@@ -70,7 +71,7 @@ export default function BookAppointment() {
 
          dispatch(hideLoading());
          if (response.data.success) {
-           toast.success(response.data.message)
+           toast.success(response.data.message) 
          }
        } catch (error) {
          console.log(error);
@@ -99,6 +100,7 @@ export default function BookAppointment() {
          dispatch(hideLoading());
          if (response.data.success) {
            toast.success(response.data.message)
+           setIsavailable(true);
          }else {
             toast.error(response.data.message)
          }
@@ -125,11 +127,36 @@ export default function BookAppointment() {
             {therapist.timing[1]}
           </p>
           <div>
-            <DatePicker format="DD-MM-YYYY" className="mb-2 w-100" onChange={(val) => setDate(moment(val).format("DD-MM-YYYY"))}/>
-            <TimePicker format="hh:mm" onChange={(val) => setTime(dayjs(val).format("hh:mm"))}/>
+            <DatePicker
+              format="DD-MM-YYYY"
+              className="mb-2 w-100"
+              onChange={(val) => {
+                setIsavailable(false);
+                setDate(moment(val).format("DD-MM-YYYY"));
+              }}
+            />
+            <TimePicker
+              format="hh:mm"
+              onChange={(val) => {
+                setIsavailable(false);
+                setTime(dayjs(val).format("hh:mm"));
+              }}
+            />
           </div>
-          <button className="btn btn-primary btn-sm mt-2 w-100" onClick={checkAvailability}>Check Availability</button>
-          <button className="btn btn-danger btn-sm mt-2 w-100" onClick={bookNow}>BOOK NOW</button>
+          <button
+            className="btn btn-primary btn-sm mt-2 w-100"
+            onClick={checkAvailability}
+          >
+            Check Availability
+          </button>
+          {isAvailable && (
+            <button
+              className="btn btn-danger btn-sm mt-2 w-100"
+              onClick={bookNow}
+            >
+              BOOK NOW
+            </button>
+          )}
         </div>
       )}
     </DashboardLayout>
