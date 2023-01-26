@@ -56,7 +56,7 @@ export default function DashboardLayout(props) {
     },
     {
       name: "Appointment",
-      path: "/appointment",
+      path: "/therapist/appointment",
       icon: "ri-todo-line",
     },
     {
