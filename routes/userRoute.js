@@ -252,4 +252,19 @@ router.post("/check-booking-availability", authmiddleware, async (req, res) => {
   }
 });
 
+router.get("/get-appointments-by-user-id", authmiddleware, async (req, res) => {
+  try {
+    const appointments = await Appointment.find({ userId: req.body.userId });
+    return res.status(200).send({
+      message: "appointments fetched Successfully!",
+      success: true,
+      data: appointments,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error Occured in fetching appointments",
+      success: false,
+    });
+  }
+});
 module.exports = router;

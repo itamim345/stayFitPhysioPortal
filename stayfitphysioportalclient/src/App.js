@@ -15,8 +15,8 @@ import TherapistList from './Pages/Admin/TherapistList';
 import FrontPage from './Pages/FrontPage/FrontPage';
 import Profile from './Pages/Doctor/Profile';
 import DashboardHome from './Components/DashboardHome';
-import Appointment from './Components/Appointment';
 import BookAppointment from './Pages/BookAppointment';
+import Appointments from './Pages/Appointments';
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -110,7 +110,7 @@ function App() {
             path="/appointment"
             element={
               <ProtectedRoute>
-                <Appointment/>
+                <Appointments/>
               </ProtectedRoute>
             }
           />
