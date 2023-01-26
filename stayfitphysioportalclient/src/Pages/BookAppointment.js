@@ -132,11 +132,11 @@ export default function BookAppointment() {
               className="mb-2 w-100"
               onChange={(val) => {
                 setIsavailable(false);
-                setDate(moment(val).format("DD-MM-YYYY"));
+                setDate(dayjs(val).format("DD-MM-YYYY"));
               }}
             />
             <TimePicker
-              format="hh:mm"
+              format="hh"
               onChange={(val) => {
                 setIsavailable(false);
                 setTime(dayjs(val).format("hh:mm"));
