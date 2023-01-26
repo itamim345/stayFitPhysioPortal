@@ -89,7 +89,7 @@ router.post("/change-appointment-status", authmiddleware, async (req, res) => {
     unseenNotification.push({
       type: "Appoint-status-changed",
       message: `Your Appointment status has been ${status}!`,
-      onClickPath: "/appointment",
+      onClickPath: "/appointments",
     });
 
     await User.save();

@@ -13,7 +13,7 @@ import Notifications from './Pages/Notifications';
 import UserList from './Pages/Admin/UserList';
 import TherapistList from './Pages/Admin/TherapistList';
 import FrontPage from './Pages/FrontPage/FrontPage';
-import Profile from './Pages/Doctor/Profile';
+import Profile from './Pages/Therapist/Profile';
 import DashboardHome from './Components/DashboardHome';
 import BookAppointment from './Pages/BookAppointment';
 import Appointments from './Pages/Appointments';
@@ -108,7 +108,7 @@ function App() {
           />
 
           <Route
-            path="/appointment"
+            path="/appointments"
             element={
               <ProtectedRoute>
                 <Appointments/>
@@ -117,7 +117,7 @@ function App() {
           />
 
           <Route
-            path="/therapist/appointment"
+            path="/therapist/appointments"
             element={
               <ProtectedRoute>
                 <TherapistAppointments/>

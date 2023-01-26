@@ -93,7 +93,7 @@ export default function TherapistAppointments() {
       title: "Actions",
       dataIndex: "actions",
       render: (text, record) => (
-        <div className="d-flex">
+        <div className="d-flex gap-3">
           {record.status === "pending" && (
             <em
               className="cp-link"

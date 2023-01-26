@@ -22,7 +22,7 @@ export default function DashboardLayout(props) {
     },
     {
       name: "Appointment",
-      path: "/appointment",
+      path: "/appointments",
       icon: "ri-todo-line",
     },
     {
@@ -56,7 +56,7 @@ export default function DashboardLayout(props) {
     },
     {
       name: "Appointment",
-      path: "/therapist/appointment",
+      path: "/therapist/appointments",
       icon: "ri-todo-line",
     },
     {
