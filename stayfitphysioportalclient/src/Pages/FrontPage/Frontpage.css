@@ -113,6 +113,11 @@ h1 {
     font-size: .9rem;
 }
 
+/**************** About us css  ******************/
+#about-us-section {
+    background: #fff;
+    padding: 5rem 0;
+} 
 /**************** contact us css  ******************/
 .contact-us {
     background: #dff9fb;
