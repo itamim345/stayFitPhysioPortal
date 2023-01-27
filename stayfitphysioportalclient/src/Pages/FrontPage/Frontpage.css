@@ -12,6 +12,9 @@ h1 {
     font-size: 3rem;
     font-weight: bold;
 }
+h2 {
+    font-size: 2.1rem;
+}
 
 /************* header area css *****************/
 #header {
@@ -119,9 +122,34 @@ h1 {
     padding: 5rem 0;
 } 
 /**************** contact us css  ******************/
-.contact-us {
-    background: #dff9fb;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+#contact-us-section {
+    background: rgba(5, 73, 121, 0.9);
+    padding: 5rem 0;
+}
+.contact-us .map,.content {
+    width: 50%;
+}
+.contact-us .map iframe {
+    width: 100%;
+    border-radius: 7px;
+}
+.contact-us .contact-details div{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding: 1.3rem 1rem;
+    background-color: #fff;
+    margin: 1rem;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+.contact-us .contact-details div i {
+    font-size: 3rem;
+    color: #054979;
+}
+
+.contact-us .contact-details div p {
+    font-size: .9rem;
 }
 
 /************* Footer-area css  ****************/
