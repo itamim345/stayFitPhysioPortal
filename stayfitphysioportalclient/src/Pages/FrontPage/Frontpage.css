@@ -152,6 +152,45 @@ h2 {
     font-size: .9rem;
 }
 
+/************* footer-details-section css  ****************/
+#footer-details-section {
+    background: #fff;
+    padding: 3rem 0;
+}
+#footer-details-section .footer-details a {
+    text-decoration: none;
+    display: flex;
+    gap: .5rem;
+    font-size: 1rem;
+}
+.footer-details div {
+    width: 25%;
+}
+.footer-details .apps i {
+    font-size: 3rem;
+    border: 1.5px solid gray;
+    margin: 0 .5rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: .3rem;
+}
+.footer-details .apps i:nth-child(1) {
+    border: 1.5px solid crimson;
+    color: crimson;
+}
+.footer-details .apps i:nth-child(1):hover {
+    background: crimson;
+    color: #fff;
+}
+.footer-details .apps i:nth-child(2) {
+    border: 1.5px solid #054979;
+    color: #054979;
+}
+.footer-details .apps i:nth-child(2):hover {
+    background:#054979;
+    color: #fff;
+}
+
 /************* Footer-area css  ****************/
 .footer-area {
     background: #000;
