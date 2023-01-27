@@ -196,5 +196,78 @@ h2 {
 
 /************* Footer-area css  ****************/
 .footer-area {
-    background: #000;
+    background: #054979;
+}
+.footer-area .socical-links a {
+    font-size: 1.6rem;
+    margin: 0 .3rem;
+    text-decoration: none;
+}
+.footer-area .socical-links {
+    display: flex;
+    justify-content: center;
+}
+.footer-area .socical-links a:nth-child(1) {
+    color: #054979;
+    background: #fff;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    padding: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-area .socical-links a:nth-child(1):hover {
+    color: #fff;
+    background: #023051;
+    border: 1px solid #fff;
+}
+.footer-area .socical-links a:nth-child(2) {
+    color: purple;
+    background: #fff;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    padding: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-area .socical-links a:nth-child(2):hover {
+    color: #fff;
+    background: purple;
+    border: 1px solid #fff;
+}
+.footer-area .socical-links a:nth-child(3) {
+    color: #2774ac;
+    background: #fff;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    padding: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-area .socical-links a:nth-child(3):hover {
+    color: #fff;
+    background: #1968a1;
+    border: 1px solid #fff;
+}
+.footer-area .socical-links a:nth-child(4) {
+    color: #054979;
+    background: #fff;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    padding: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-area .socical-links a:nth-child(4):hover {
+    color: #fff;
+    background: #032b48;
+    border: 1px solid #fff;
 }
