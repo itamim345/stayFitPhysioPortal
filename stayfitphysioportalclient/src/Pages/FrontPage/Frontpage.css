@@ -24,6 +24,7 @@ h2 {
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 99999;
 }
 .nav-area {
     display: flex;
@@ -114,6 +115,47 @@ h2 {
 }
 .how-it-works .works-process p {
     font-size: .9rem;
+}
+
+/**************** About us css  ******************/
+#about-us-section {
+    background: #fff;
+    padding: 5rem 0;
+} 
+
+/******************** Testimonials Area *********************/
+#testimonials {
+    /* background-color: #dff9fb; */
+    background-color: rgba(5, 73, 121, 0.9);
+    padding: 5rem 0;
+}
+.testimonials-section .all-testimonials {
+    display: flex;
+    text-align: center;
+    gap: 2rem;
+}
+.testimonials-section .all-testimonials div{
+    width: 33.3%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding: 1.3rem 1rem;
+    background-color: #fff;
+    border-radius: .3rem;
+}
+.testimonials-section .all-testimonials i {
+    font-size: 3rem;
+    color: #054979;
+}
+.testimonials-section .all-testimonials img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+}
+.testimonials-section .all-testimonials h6 {
+    margin-top: .5rem;
+}
+.testimonials-section .all-testimonials p {
+    font-size: .9rem;
+    color: rgb(99, 98, 98);
 }
 
 /**************** About us css  ******************/
