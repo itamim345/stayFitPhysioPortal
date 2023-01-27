@@ -9,7 +9,7 @@ import WelcomeArea from './FrontPageComponents/WelcomeArea';
 import WhyPhysio from './FrontPageComponents/WhyPhysio';
 export default function FrontPage() {
   return (
-    <div>
+    <div className='fronpage_container'>
       <Header/>
       <WelcomeArea/>
       <WhyPhysio/>
