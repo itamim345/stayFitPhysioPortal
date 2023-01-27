@@ -53,7 +53,7 @@ export default function FooterDetail() {
             </Link>
           </div>
         </div>
-        <div>
+        <div className='get-app'>
           <h4>Get the App</h4>
           <div className="apps">
             <i class="ri-google-play-line"></i>

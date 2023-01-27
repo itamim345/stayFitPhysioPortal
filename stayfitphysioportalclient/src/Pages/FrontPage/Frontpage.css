@@ -190,6 +190,9 @@ h2 {
     background:#054979;
     color: #fff;
 }
+.footer-details .get-app small {
+    font-size: .8rem;
+}
 
 /************* Footer-area css  ****************/
 .footer-area {
