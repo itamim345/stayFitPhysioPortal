@@ -4,7 +4,7 @@ export default function ContactUs() {
   return (
     <div id="contact-us-section">
       <section className="contact-us container d-flex align-items-center gap-5 text-white">
-        <div className="map">
+        <div className="map" data-aos="zoom-in-right" data-aos-duration="1000">
           <iframe
             title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235850.7723487098!2d88.2072626825062!3d22.53536672476327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1674793517615!5m2!1sen!2sin"
@@ -15,9 +15,13 @@ export default function ContactUs() {
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className="content">
+        <div
+          className="content"
+          data-aos="zoom-in-left"
+          data-aos-duration="1000"
+        >
           <div className="contact-details py-3">
-            <h2 className='ps-3'>
+            <h2 className="ps-3">
               Contact <span className="text-primary">Us</span>
             </h2>
             <div>

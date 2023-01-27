@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <div id="about-us-section">
       <section className="about-us container d-flex gap-5 align-items-center">
-        <div className="w-50">
+        <div className="w-50" data-aos="zoom-in-right" data-aos-duration="1000">
           <h2 className="mb-4">
             About <span className="text-primary">Us</span>
           </h2>
@@ -14,11 +14,11 @@ export default function AboutUs() {
             Therapist, We Ensure a excellent hassle free modern systemetic way
             to manage the patient and therapist problem. In this system a
             patient can get the appointment with any of the therapist from our
-            platform based on his choice and a therapist can apply as a therapist
-            anytime.
+            platform based on his choice and a therapist can apply as a
+            therapist anytime.
           </p>
         </div>
-        <div className="w-50">
+        <div className="w-50" data-aos="zoom-in-left" data-aos-duration="1000">
           <img
             src="https://i.ibb.co/QDVCmCB/physio-Portal-about-us.jpg"
             alt="why-physio-img"

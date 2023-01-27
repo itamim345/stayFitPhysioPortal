@@ -5,19 +5,21 @@ export default function FooterDetail() {
   return (
     <div id="footer-details-section">
       <section className="footer-details container d-flex align-items-center gap-5">
-        <div className="text-center">
+        <div
+          className="text-center"
+          data-aos="zoom-in"
+          data-aos-duration="1500"
+        >
           <img
             src="https://i.ibb.co/HhbbLzr/logo.png"
             alt=""
             className="w-50"
           />
           <h4>StayFit</h4>
-          <p>
-            Your neighborhood body specialists
-          </p>
+          <p>Your neighborhood body specialists</p>
         </div>
 
-        <div>
+        <div data-aos="zoom-in" data-aos-duration="1500">
           <h4>Quick Links</h4>
           <div>
             <Link to="/">
@@ -35,7 +37,7 @@ export default function FooterDetail() {
           </div>
         </div>
 
-        <div>
+        <div data-aos="zoom-in" data-aos-duration="1500">
           <h4>Important Links</h4>
           <div>
             <Link to="/">
@@ -53,7 +55,8 @@ export default function FooterDetail() {
             </Link>
           </div>
         </div>
-        <div className='get-app'>
+
+        <div className="get-app" data-aos="zoom-in" data-aos-duration="1500">
           <h4>Get the App</h4>
           <div className="apps">
             <i class="ri-google-play-line"></i>
