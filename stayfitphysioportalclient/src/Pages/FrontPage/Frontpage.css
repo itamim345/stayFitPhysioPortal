@@ -2,6 +2,11 @@
 /************* common css *****************/
 body {
     font-family: 'Poppins', sans-serif;
+    background-image: url("https://i.ibb.co/3BB4JCn/physio-Portal-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 h1 {
     font-size: 3rem;
@@ -21,7 +26,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .2rem 0
+    padding: .2rem 0;
+    z-index: 9999;
 }
 .nav-area .logo img {
     background-color: white;
@@ -73,13 +79,17 @@ h1 {
 }
 
 /************** why pshyio area css  *************/
-/* .why-physio {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-} */
+#why-physio-section {
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    background: #fff;
+    padding: 5rem 0;
+}
 
 /******************** How It Works Area *********************/
 #howitworks {
-    background-color: #dff9fb;
+    /* background-color: #dff9fb; */
+    background-color: rgba(5, 73, 121, 0.7);
+    padding: 5rem 0;
 }
 .how-it-works .works-process {
     display: flex;
@@ -89,10 +99,18 @@ h1 {
 .how-it-works .works-process div{
     width: 33.3%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-    padding: 2rem;
+    padding: 1.3rem 1rem;
+    background-color: #fff;
 }
 .how-it-works .works-process i {
-    font-size: 2rem;
+    font-size: 3rem;
+    color: #054979;
+}
+.how-it-works .works-process h3 {
+    font-size: 1.4rem;
+}
+.how-it-works .works-process p {
+    font-size: .9rem;
 }
 
 /**************** contact us css  ******************/

@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function WhyPhysio() {
   return (
-    <div>
-      <section className="why-physio container pt-4 my-5 d-flex gap-5">
+    <div id='why-physio-section'>
+      <section className="why-physio container d-flex gap-5">
         <div className='w-50'>
           <img src="https://i.ibb.co/StmrNkn/why-Physio-img.jpg" alt="why-physio-img" className='w-100 rounded' />
         </div>
