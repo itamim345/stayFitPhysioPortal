@@ -7,13 +7,17 @@ export default function Header() {
     <div id="header">
       <div class="nav-area container">
         <div className="logo">
-          <img src="https://i.ibb.co/HhbbLzr/logo.png" alt="" className='w-25' />
+          <img
+            src="https://i.ibb.co/HhbbLzr/logo.png"
+            alt=""
+            className="w-25"
+          />
         </div>
         <div className="menu">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Services</Link>
-          <Link to="/about">Cotact</Link>
+          <a href="#header">Home</a>
+          <a href="#about-us-section">About</a>
+          <a href="#our-features">Features</a>
+          <a href="#contact-us-section">Contact</a>
         </div>
         <div className="buttons">
           <Link to="/login">
