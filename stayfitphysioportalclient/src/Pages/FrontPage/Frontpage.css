@@ -1,12 +1,16 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 /************* common css *****************/
+body {
+    font-family: 'Poppins', sans-serif;
+}
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 /************* header area css *****************/
 #header {
-    background: #1392ed;
+    background: #054979;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: .2rem 0;
     position: sticky;
@@ -39,10 +43,11 @@ h1 {
     border-radius: 5px;
 }
 .nav-area #btn-1 {
-    background: #054979;
+    background: crimson;
 }
 .nav-area #btn-2 {
-    background: green;
+    background: #ffc107;
+    color: black;
 }
 
 /****************** welcome-area css *******************/
