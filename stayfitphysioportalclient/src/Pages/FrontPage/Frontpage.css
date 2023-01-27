@@ -121,7 +121,19 @@ h2 {
 #about-us-section {
     background: #fff;
     padding: 5rem 0;
+}
+
+/**************** our-features us css  ******************/
+#our-features {
+    background: #fff;
+    padding: 5rem 0;
 } 
+.our-features-section h6 {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: rgb(68, 66, 66);
+}
 
 /******************** Testimonials Area *********************/
 #testimonials {
