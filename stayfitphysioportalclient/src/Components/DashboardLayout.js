@@ -21,7 +21,7 @@ export default function DashboardLayout(props) {
       icon: "ri-dashboard-line",
     },
     {
-      name: "Appointment",
+      name: "Appointments",
       path: "/appointments",
       icon: "ri-todo-line",
     },
@@ -55,7 +55,7 @@ export default function DashboardLayout(props) {
       icon: "ri-home-smile-line",
     },
     {
-      name: "Appointment",
+      name: "Appointments",
       path: "/therapist/appointments",
       icon: "ri-todo-line",
     },
@@ -71,7 +71,11 @@ export default function DashboardLayout(props) {
   return (
     <div>
       <div className="db-layout m-4">
-        <div className={`left-db ${condition1 && "left-db-admin"} ${condition2 && "left-db-therapist"}`}>
+        <div
+          className={`left-db ${condition1 && "left-db-admin"} ${
+            condition2 && "left-db-therapist"
+          }`}
+        >
           <div className="left-db-title">
             <h4>StyFit Portal</h4>
           </div>
@@ -81,7 +85,7 @@ export default function DashboardLayout(props) {
               return (
                 <div
                   className={`single-menu-item ${
-                    isActive && `active-menu-item ` 
+                    isActive && `active-menu-item `
                   }`}
                 >
                   <i className={menuitem.icon}></i>
@@ -112,7 +116,12 @@ export default function DashboardLayout(props) {
                 <i className="ri-notification-3-line cursor-p"></i>
               </Badge>
 
-              <Link to="/user-profile">{user?.name}</Link>
+              <span
+                className="text-primary cursor-p"
+                onClick={() => navigate("/notifications")}
+              >
+                {user?.name}
+              </span>
             </div>
           </div>
           <div className="main-db-content">

@@ -1,3 +1,9 @@
+
+/************* common css *****************/
+h1 {
+    font-size: 2.5rem;
+}
+
 /************* header area css *****************/
 #header {
     background: #1392ed;
@@ -40,14 +46,21 @@
 }
 
 /****************** welcome-area css *******************/
+#welcome-section {
+    background: #054979;
+    color: white;
+}
 .welcome-area {
     display: flex;
     gap: 2rem;
     padding: 3rem 0;
     align-items: center;
 }
-.welcome-area div {
-    width: 50%;
+.welcome-area .welcome-img-area {
+    width: 40%;
+}
+.welcome-area .welcome-area-content {
+    width: 60%;
 }
 .welcome-area img {
     width: 100%;

@@ -8,26 +8,29 @@ import { toast } from "react-hot-toast";
 import "../OurCss/common.css";
 import dayjs from "dayjs";
 
-export default function Appointments() {
-      const dispatch = useDispatch();
-      const [appointments, setAppointments] = useState([]);
+export default function DoctorAppointments() {
+  const dispatch = useDispatch();
+  const [appointments, setAppointments] = useState([]);
 
-        const getAppointmentsInfo = async () => {
-          try {
-            dispatch(showLoading());
-            const response = await axios.get("/api/user/get-appointments-by-user-id", {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            });
-            dispatch(hideLoading());
-            if (response.data.success) {
-              setAppointments(response.data.data);
-            }
-          } catch (error) {
-            dispatch(hideLoading());
-          }
-        };
+  const getAppointmentsInfo = async () => {
+    try {
+      dispatch(showLoading());
+      const response = await axios.get(
+        "/api/user/get-appointments-by-user-id",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      dispatch(hideLoading());
+      if (response.data.success) {
+        setAppointments(response.data.data);
+      }
+    } catch (error) {
+      dispatch(hideLoading());
+    }
+  };
 
   //useEfftect
   useEffect(() => {
@@ -58,23 +61,20 @@ export default function Appointments() {
       dataIndex: "createdAt",
       render: (text, record) => (
         <p>
-          {dayjs(record.date).format("DD-MM-YYYY")} {dayjs(record.time).format("hh:mm")}
+          {dayjs(record.date).format("DD-MM-YYYY")}{" "}
+          {dayjs(record.time).format("hh:mm")}
         </p>
       ),
     },
     {
-        title: "status",
-        dataIndex: "status",
-
-    }
+      title: "status",
+      dataIndex: "status",
+    },
   ];
 
-  
   return (
     <DashboardLayout>
-      <h5 className="text-center text-primary text-decoration-underline">
-        Appointments
-      </h5>
+      <h1>Appointments</h1>
       <Table columns={columns} dataSource={appointments} />
     </DashboardLayout>
   );

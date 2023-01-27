@@ -81,9 +81,11 @@ export default function Profile() {
 
   return (
     <DashboardLayout>
-      <h5 className="text-center text-primary">Therapist Profile</h5>
+      <h5 className="text-center text-primary text-decoration-underline">Therapist Profile</h5>
       <hr></hr>
-      {therapist && <TherapistForm onFinish={onFinish} initialValues={therapist} />}
+      {therapist && (
+        <TherapistForm onFinish={onFinish} initialValues={therapist} />
+      )}
     </DashboardLayout>
   );
 }

@@ -55,7 +55,9 @@ export default function Notifications() {
     }
   return (
     <DashboardLayout>
-      <h3>Notification</h3>
+      <h5 className="text-center text-primary text-decoration-underline">
+        Notifications
+      </h5>
       <Tabs>
         <Tabs.TabPane tab="Unseen" key={0}>
           <div className="d-flex justify-content-end">
@@ -77,7 +79,12 @@ export default function Notifications() {
         </Tabs.TabPane>
         <Tabs.TabPane tab="Seen" key={1}>
           <div className="d-flex justify-content-end">
-            <p className="text-decoration-underline cursor-p" onClick={()=> deleteAllNotify()}>Delete All</p>
+            <p
+              className="text-decoration-underline cursor-p"
+              onClick={() => deleteAllNotify()}
+            >
+              Delete All
+            </p>
           </div>
           {user?.seenNotifications.map((notify) => (
             <div

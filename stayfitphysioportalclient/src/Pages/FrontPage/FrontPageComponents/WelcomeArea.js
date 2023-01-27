@@ -4,19 +4,15 @@ import '../Frontpage.css'
 
 export default function WelcomeArea() {
   return (
-    <div>
+    <div id="welcome-section">
       <section className="welcome-area container">
-        <div>
-          <img
-            src="https://i.ibb.co/tskPkS4/welcome-img-comp.jpg"
-            alt="welcome-img"
-          />
-        </div>
-        <div>
-          <h2>Welcome to <span className='text-primary'>StayFit</span> Physio Portal</h2>
-          <p className='my-4'>
-            <q><em>Do Something Today, Your Future Self Will Thank You For.</em></q>
-            <h5 className='my-2'>Platform for Patient and Therapist</h5>
+        <div className="welcome-area-content">
+          <h1>A Way To Healthy Life, helping hand towards optimal health.</h1>
+          <p className="my-4">
+            We provide the best solution for therapist and patients. Always Feel
+            better, move better and be better. We keep a Genuine Commitment to
+            your Health. We are Setting new standards in physiotherapy. Relieve
+            Pain & Regain Your Life.
           </p>
           <Link to="/login">
             <button className="btn btn-danger">Book An Appointment</button>
@@ -25,6 +21,12 @@ export default function WelcomeArea() {
           <Link to="/login">
             <button className="btn btn-warning">Apply As Therapist</button>
           </Link>
+        </div>
+        <div className="welcome-img-area">
+          <img
+            src="https://i.ibb.co/yYC0y0P/physioportal-welcome-img2.png"
+            alt="welcome-img"
+          />
         </div>
       </section>
     </div>

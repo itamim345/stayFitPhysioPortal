@@ -115,7 +115,7 @@ export default function TherapistAppointments() {
 
   return (
     <DashboardLayout>
-      <h1>Appointments</h1>
+      <h5 className="text-center text-primary text-decoration-underline">Appointments</h5>
       <Table columns={columns} dataSource={appointments} />
     </DashboardLayout>
   );

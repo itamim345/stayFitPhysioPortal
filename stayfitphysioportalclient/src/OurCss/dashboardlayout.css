@@ -43,7 +43,7 @@
 .header-user {
     display: flex;
     align-items: center;
-    gap: .3rem;
+    gap: .5rem;
     padding: 0 .5rem;
 }
 .header-user a {
