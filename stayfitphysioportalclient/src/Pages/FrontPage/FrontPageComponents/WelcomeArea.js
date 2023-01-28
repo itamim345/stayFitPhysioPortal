@@ -5,7 +5,7 @@ import '../Frontpage.css'
 export default function WelcomeArea() {
   return (
     <div id="welcome-section">
-      <section className="welcome-area container">
+      <section className="welcome-area">
         <div
           className="welcome-area-content"
           data-aos="zoom-in-right"
@@ -18,13 +18,18 @@ export default function WelcomeArea() {
             your Health. We are Setting new standards in physiotherapy. Relieve
             Pain & Regain Your Life.
           </p>
-          <Link to="/login">
-            <button className="btn btn-danger">Book An Appointment</button>
-          </Link>
-          <span className="mx-3 font-bold">OR</span>
-          <Link to="/login">
-            <button className="btn btn-warning">Apply As Therapist</button>
-          </Link>
+          <div className='d-flex gap-3 welcome-btn'>
+            <Link to="/login">
+              <button className="btn btn-danger btn-sm">
+                Book An Appointment
+              </button>
+            </Link>
+            <Link to="/login">
+              <button className="btn btn-warning btn-sm">
+                Apply As Therapist
+              </button>
+            </Link>
+          </div>
         </div>
         <div
           className="welcome-img-area"

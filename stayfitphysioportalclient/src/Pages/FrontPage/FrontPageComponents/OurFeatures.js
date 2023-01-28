@@ -3,7 +3,7 @@ import React from 'react';
 export default function OurFeatures() {
   return (
     <div id="our-features">
-      <section className="our-features-section container d-flex gap-5 align-items-center">
+      <section className="our-features-section d-flex gap-5 align-items-center">
         <div className="w-50" data-aos="zoom-in-right" data-aos-duration="1000">
           <img
             src="https://i.ibb.co/6m0rPqf/physio-portal-features.jpg"

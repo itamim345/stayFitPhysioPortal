@@ -3,7 +3,7 @@ import React from 'react';
 export default function Testimonials() {
   return (
     <div id="testimonials">
-      <section className="testimonials-section py-3 container">
+      <section className="testimonials-section py-3">
         <h2 className="mb-5 text-center text-primary">
           Our <span className="text-white">Testimonials</span>
         </h2>

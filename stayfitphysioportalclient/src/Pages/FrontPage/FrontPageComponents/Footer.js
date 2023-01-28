@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div className="footer-area text-center text-white">
-      <footer className="container py-3 d-flex justify-content-between align-items-center">
-        <div>
+      <footer className="py-3 d-flex justify-content-between align-items-center">
+        <div className='footer-text'>
           &copy;2023 | All Right Reserved by{" "}
           <span className="text-warning cursor-p">StayFit Physio Portal</span>
         </div>

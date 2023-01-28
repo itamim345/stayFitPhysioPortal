@@ -4,7 +4,7 @@ import "../Frontpage.css"
 export default function AboutUs() {
   return (
     <div id="about-us-section">
-      <section className="about-us container d-flex gap-5 align-items-center">
+      <section className="about-us d-flex gap-5 align-items-center">
         <div className="w-50" data-aos="zoom-in-right" data-aos-duration="1000">
           <h2 className="mb-4">
             About <span className="text-primary">Us</span>

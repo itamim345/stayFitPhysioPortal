@@ -5,7 +5,7 @@ import '../Frontpage.css';
 export default function Header() {
   return (
     <div id="header">
-      <div class="nav-area container">
+      <div class="nav-area">
         <div className="logo">
           <img
             src="https://i.ibb.co/HhbbLzr/logo.png"
@@ -21,10 +21,14 @@ export default function Header() {
         </div>
         <div className="buttons">
           <Link to="/login">
-            <button id="btn-1">Login</button>
+            <button id="btn-1" className="btn btn-sm">
+              Login
+            </button>
           </Link>
           <Link to="/register">
-            <button id="btn-2">Register</button>
+            <button id="btn-2" className="btn btn-sm">
+              Register
+            </button>
           </Link>
         </div>
       </div>

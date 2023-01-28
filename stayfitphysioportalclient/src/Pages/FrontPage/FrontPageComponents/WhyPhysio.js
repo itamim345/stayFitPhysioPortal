@@ -3,7 +3,7 @@ import React from 'react';
 export default function WhyPhysio() {
   return (
     <div id="why-physio-section">
-      <section className="why-physio container d-flex gap-5">
+      <section className="why-physio d-flex align-items-center gap-5">
         <div className="w-50" data-aos="zoom-in-right" data-aos-duration="1000">
           <img
             src="https://i.ibb.co/StmrNkn/why-Physio-img.jpg"

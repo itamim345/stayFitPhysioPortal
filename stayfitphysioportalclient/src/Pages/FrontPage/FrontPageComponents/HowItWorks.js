@@ -3,7 +3,7 @@ import React from 'react';
 export default function HowItWorks() {
     return (
       <div id="howitworks">
-        <section className="how-it-works py-3 container">
+        <section className="how-it-works py-3">
           <div className="works-process">
             <div data-aos="flip-up" data-aos-duration="1000">
               <i class="ri-shield-user-line"></i>

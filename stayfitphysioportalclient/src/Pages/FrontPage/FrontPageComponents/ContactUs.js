@@ -3,7 +3,7 @@ import React from 'react';
 export default function ContactUs() {
   return (
     <div id="contact-us-section">
-      <section className="contact-us container d-flex align-items-center gap-5 text-white">
+      <section className="contact-us d-flex align-items-center gap-5 text-white">
         <div className="map" data-aos="zoom-in-right" data-aos-duration="1000">
           <iframe
             title="map"

@@ -4,40 +4,43 @@ import { Link } from 'react-router-dom';
 export default function FooterDetail() {
   return (
     <div id="footer-details-section">
-      <section className="footer-details container d-flex align-items-center gap-5">
-        <div
-          className="text-center"
-          data-aos="zoom-in"
-          data-aos-duration="1500"
-        >
-          <img
-            src="https://i.ibb.co/HhbbLzr/logo.png"
-            alt=""
-            className="w-50"
-          />
-          <h4>StayFit</h4>
-          <p>Your neighborhood body specialists</p>
-        </div>
+      <section className="footer-details d-flex align-items-center gap-1">
+        <div className='left-div d-flex'>
+          <div
+            className="text-center"
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+          >
+            <img
+              src="https://i.ibb.co/HhbbLzr/logo.png"
+              alt=""
+              className="w-50"
+            />
+            <h4>StayFit</h4>
+            <p>Your neighborhood body specialists</p>
+          </div>
 
-        <div data-aos="zoom-in" data-aos-duration="1500">
-          <h4>Quick Links</h4>
-          <div>
-            <Link to="/">
-              <i className="ri-arrow-right-s-line"></i>Home
-            </Link>
-            <Link to="/">
-              <i className="ri-arrow-right-s-line"></i>About&nbsp;Us
-            </Link>
-            <Link to="/">
-              <i className="ri-arrow-right-s-line"></i>Why&nbsp;Physio
-            </Link>
-            <Link to="/">
-              <i className="ri-arrow-right-s-line"></i>Contact&nbsp;us
-            </Link>
+          <div data-aos="zoom-in" data-aos-duration="1500">
+            <h4>Quick Links</h4>
+            <div>
+              <Link to="/">
+                <i className="ri-arrow-right-s-line"></i>Home
+              </Link>
+              <Link to="/">
+                <i className="ri-arrow-right-s-line"></i>About&nbsp;Us
+              </Link>
+              <Link to="/">
+                <i className="ri-arrow-right-s-line"></i>Why&nbsp;Physio
+              </Link>
+              <Link to="/">
+                <i className="ri-arrow-right-s-line"></i>Contact&nbsp;us
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div data-aos="zoom-in" data-aos-duration="1500">
+       <div className='right-div d-flex'>
+         <div data-aos="zoom-in" data-aos-duration="1500">
           <h4>Important Links</h4>
           <div>
             <Link to="/">
@@ -64,6 +67,7 @@ export default function FooterDetail() {
           </div>
           <small>Available in App & Play Store</small>
         </div>
+       </div>
       </section>
     </div>
   );

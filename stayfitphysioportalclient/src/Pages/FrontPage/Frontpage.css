@@ -1,327 +1,481 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 /************* common css *****************/
 .fronpage_container {
-    font-family: 'Poppins', sans-serif;
-    background-image: url("https://i.ibb.co/3BB4JCn/physio-Portal-bg.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+  background-image: url("https://i.ibb.co/3BB4JCn/physio-Portal-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 h1 {
-    font-size: 3rem;
-    font-weight: bold;
+  font-size: 3rem;
+  font-weight: bold;
 }
 h2 {
-    font-size: 2.1rem;
+  font-size: 2.1rem;
+}
+p {
+    font-size: 0.9rem;
 }
 
 /************* header area css *****************/
 #header {
-    background: #054979;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: .2rem 0;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 99999;
+  background: #054979;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 0.2rem 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99999;
 }
 .nav-area {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .2rem 0;
-    z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 4rem;
+  z-index: 9999;
 }
 .nav-area .logo img {
-    background-color: white;
-    border-radius: 50%;
-    width: 3rem !important;
-    height: 3rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
+  border-radius: 50%;
+  width: 3rem !important;
+  height: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .nav-area .menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 .4rem;
+  color: white;
+  text-decoration: none;
+  margin: 0 0.4rem;
 }
 .nav-area button {
-    border: none;
-    margin: 0 .5rem;
-    color: white;
-    padding: .2rem 1rem;
-    border-radius: 5px;
+  border: none;
+  margin: 0 0.5rem;
+  color: white;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
 }
 .nav-area #btn-1 {
-    background: crimson;
+  background: crimson;
 }
 .nav-area #btn-2 {
-    background: #ffc107;
-    color: black;
+  background: #ffc107;
+  color: black;
 }
 
 /****************** welcome-area css *******************/
 #welcome-section {
-    background: #054979;
-    color: white;
+  background: #054979;
+  color: white;
+  padding: 0 4rem;
 }
 .welcome-area {
-    display: flex;
-    gap: 2rem;
-    padding: 3rem 0;
-    align-items: center;
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 0;
+  align-items: center;
 }
 .welcome-area .welcome-img-area {
-    width: 40%;
+  width: 40%;
 }
 .welcome-area .welcome-area-content {
-    width: 60%;
+  width: 60%;
 }
 .welcome-area img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+.welcome-area p {
+  font-size: 0.9rem;
 }
 
 /************** why pshyio area css  *************/
 #why-physio-section {
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
-    background: #fff;
-    padding: 5rem 0;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+  background: #fff;
+  padding: 5rem 4rem;
 }
 
 /******************** How It Works Area *********************/
 #howitworks {
-    /* background-color: #dff9fb; */
-    background-color: rgba(5, 73, 121, 0.7);
-    padding: 5rem 0;
+  /* background-color: #dff9fb; */
+  background-color: rgba(5, 73, 121, 0.7);
+  padding: 5rem 4rem;
 }
 .how-it-works .works-process {
-    display: flex;
-    text-align: center;
-    gap: 2rem;
+  display: flex;
+  text-align: center;
+  gap: 2rem;
 }
-.how-it-works .works-process div{
-    width: 33.3%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-    padding: 1.3rem 1rem;
-    background-color: #fff;
+.how-it-works .works-process div {
+  width: 33.3%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  padding: 1.3rem 1rem;
+  background-color: #fff;
 }
 .how-it-works .works-process i {
-    font-size: 3rem;
-    color: #054979;
+  font-size: 3rem;
+  color: #054979;
 }
 .how-it-works .works-process h3 {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 .how-it-works .works-process p {
-    font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 /**************** About us css  ******************/
 #about-us-section {
-    background: #fff;
-    padding: 5rem 0;
-}
-
-/**************** our-features us css  ******************/
-#our-features {
-    background: #fff;
-    padding: 5rem 0;
-} 
-.our-features-section h6 {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    color: rgb(68, 66, 66);
+  background: #fff;
+  padding: 5rem 4rem;
 }
 
 /******************** Testimonials Area *********************/
 #testimonials {
-    /* background-color: #dff9fb; */
-    background-color: rgba(5, 73, 121, 0.9);
-    padding: 5rem 0;
+  /* background-color: #dff9fb; */
+  background-color: rgba(5, 73, 121, 0.9);
+  padding: 5rem 4rem;
 }
 .testimonials-section .all-testimonials {
-    display: flex;
-    text-align: center;
-    gap: 2rem;
+  display: flex;
+  text-align: center;
+  gap: 2rem;
 }
-.testimonials-section .all-testimonials div{
-    width: 33.3%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-    padding: 1.3rem 1rem;
-    background-color: #fff;
-    border-radius: .3rem;
+.testimonials-section .all-testimonials div {
+  width: 33.3%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  padding: 1.3rem 1rem;
+  background-color: #fff;
+  border-radius: 0.3rem;
 }
 .testimonials-section .all-testimonials i {
-    font-size: 3rem;
-    color: #054979;
+  font-size: 3rem;
+  color: #054979;
 }
 .testimonials-section .all-testimonials img {
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
 }
 .testimonials-section .all-testimonials h6 {
-    margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .testimonials-section .all-testimonials p {
-    font-size: .9rem;
-    color: rgb(99, 98, 98);
+  font-size: 0.9rem;
+  color: rgb(99, 98, 98);
 }
 
-/**************** About us css  ******************/
-#about-us-section {
-    background: #fff;
-    padding: 5rem 0;
-} 
+/**************** our-features us css  ******************/
+#our-features {
+  background: #fff;
+  padding: 5rem 4rem;
+}
+.our-features-section h6 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgb(68, 66, 66);
+}
+
 /**************** contact us css  ******************/
 #contact-us-section {
-    background: rgba(5, 73, 121, 0.9);
-    padding: 5rem 0;
+  background: rgba(5, 73, 121, 0.9);
+  padding: 5rem 4rem;
 }
-.contact-us .map,.content {
-    width: 50%;
+.contact-us .map,
+.content {
+  width: 50%;
 }
 .contact-us .map iframe {
-    width: 100%;
-    border-radius: 7px;
+  width: 100%;
+  border-radius: 7px;
 }
-.contact-us .contact-details div{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-    padding: 1.3rem 1rem;
-    background-color: #fff;
-    margin: 1rem;
-    color: #000;
-    display: flex;
-    align-items: center;
-    gap: .7rem;
+.contact-us .contact-details div {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  padding: 1.3rem 1rem;
+  background-color: #fff;
+  margin: 1rem;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 .contact-us .contact-details div i {
-    font-size: 3rem;
-    color: #054979;
+  font-size: 3rem;
+  color: #054979;
 }
 
 .contact-us .contact-details div p {
-    font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 /************* footer-details-section css  ****************/
 #footer-details-section {
-    background: #fff;
-    padding: 3rem 0;
+  background: #fff;
+  padding: 3rem 4rem;
 }
 #footer-details-section .footer-details a {
-    text-decoration: none;
-    display: flex;
-    gap: .5rem;
-    font-size: 1rem;
+  text-decoration: none;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
 }
 .footer-details div {
-    width: 25%;
+  width: 50%;
+  align-items: center;
 }
 .footer-details .apps i {
-    font-size: 3rem;
-    border: 1.5px solid gray;
-    margin: 0 .5rem;
-    padding: .5rem 1rem;
-    cursor: pointer;
-    border-radius: .3rem;
+  font-size: 3rem;
+  border: 1.5px solid gray;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
 }
 .footer-details .apps i:nth-child(1) {
-    border: 1.5px solid crimson;
-    color: crimson;
+  border: 1.5px solid crimson;
+  color: crimson;
 }
 .footer-details .apps i:nth-child(1):hover {
-    background: crimson;
-    color: #fff;
+  background: crimson;
+  color: #fff;
 }
 .footer-details .apps i:nth-child(2) {
-    border: 1.5px solid #054979;
-    color: #054979;
+  border: 1.5px solid #054979;
+  color: #054979;
 }
 .footer-details .apps i:nth-child(2):hover {
-    background:#054979;
-    color: #fff;
+  background: #054979;
+  color: #fff;
 }
 .footer-details .get-app small {
-    font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 /************* Footer-area css  ****************/
 .footer-area {
-    background: #054979;
+  background: #054979;
+  padding: 0 4rem;
 }
 .footer-area .socical-links a {
-    font-size: 1.6rem;
-    margin: 0 .3rem;
-    text-decoration: none;
+  font-size: 1.6rem;
+  margin: 0 0.3rem;
+  text-decoration: none;
 }
 .footer-area .socical-links {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .footer-area .socical-links a:nth-child(1) {
-    color: #054979;
-    background: #fff;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 50%;
-    padding: .3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: #054979;
+  background: #fff;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .footer-area .socical-links a:nth-child(1):hover {
-    color: #fff;
-    background: #023051;
-    border: 1px solid #fff;
+  color: #fff;
+  background: #023051;
+  border: 1px solid #fff;
 }
 .footer-area .socical-links a:nth-child(2) {
-    color: purple;
-    background: #fff;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 50%;
-    padding: .3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: purple;
+  background: #fff;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .footer-area .socical-links a:nth-child(2):hover {
-    color: #fff;
-    background: purple;
-    border: 1px solid #fff;
+  color: #fff;
+  background: purple;
+  border: 1px solid #fff;
 }
 .footer-area .socical-links a:nth-child(3) {
-    color: #2774ac;
-    background: #fff;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 50%;
-    padding: .3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: #2774ac;
+  background: #fff;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .footer-area .socical-links a:nth-child(3):hover {
-    color: #fff;
-    background: #1968a1;
-    border: 1px solid #fff;
+  color: #fff;
+  background: #1968a1;
+  border: 1px solid #fff;
 }
 .footer-area .socical-links a:nth-child(4) {
-    color: #054979;
-    background: #fff;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 50%;
-    padding: .3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: #054979;
+  background: #fff;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .footer-area .socical-links a:nth-child(4):hover {
-    color: #fff;
-    background: #032b48;
-    border: 1px solid #fff;
+  color: #fff;
+  background: #032b48;
+  border: 1px solid #fff;
+}
+
+/* Responsive CSS */
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 2.5rem;
+    
+  }
+  h2 {
+  font-size: 1.8rem;
+}
+#welcome-section,.footer-area {
+    padding: 0 3rem;
+  }
+  .nav-area {
+    padding: 0.2rem 3rem;
+  }
+  #howitworks,#why-physio-section,#about-us-section,#testimonials,#our-features,#contact-us-section,#footer-details-section {
+    padding: 5rem 3rem;
+  }
+}
+@media (max-width: 992px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .why-physio {
+    flex-direction: column;
+    text-align: center;
+  }
+  .why-physio div {
+    width: 100% !important;
+  }
+  .footer-details {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer-details div {
+    width: 100%;
+  }
+  .footer-details .right-div div:nth-child(1) {
+    text-align: center;
+  }
+  .footer-details .right-div div:nth-child(1) a{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 780px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .nav-area button{
+    display: none;
+  }
+  .welcome-area{
+    flex-direction: column-reverse;
+  }
+  .welcome-area .welcome-area-content {
+    width: 100%;
+  }
+  .welcome-area img {
+    width: 100%;
+  }
+  .works-process {
+    flex-direction: column;
+    align-items: center;
+  }
+  .how-it-works .works-process div {
+    width: 60%;
+  }
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-us div {
+    width: 100% !important;
+  }
+  .all-testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+  .all-testimonials div {
+    width: 60% !important;
+  }
+  .our-features-section {
+    flex-direction: column;
+  }
+  .our-features-section div {
+    width: 100% !important;
+    text-align: center;
+  }
+  .our-features-section div h6 {
+    justify-content: center;
+  }
+  .contact-us {
+    flex-direction: column;
+  }
+  .contact-us h2 {
+    text-align: center;
+  }
+  .contact-us .map,
+.content {
+  width: 100%;
+}
+footer {
+    flex-direction: column!important;
+    gap: 1rem;
+  }
+
+}
+
+@media (max-width: 575px) {
+    .nav-area .menu {
+        margin-left: .5rem;
+    }
+    .welcome-area {
+        text-align: center;
+    }
+    .welcome-area .welcome-btn {
+        justify-content: center;
+    }
+    .how-it-works .works-process div {
+    width: 90%;
+  }
+  .all-testimonials div {
+    width: 90% !important;
+  }
+  .footer-details{
+    gap: 1.5rem!important;
+  }
+  .footer-details .left-div,.right-div {
+    flex-direction: column!important;
+    gap: 1rem;
+  }
+  .footer-details .left-div div:nth-child(2) a{
+    justify-content: center;
+  }
+  .footer-details .left-div div:nth-child(2) {
+    text-align: center;
+  }
+  .footer-details .right-div div:nth-child(2) {
+    text-align: center;
+  }
+  footer .footer-text{
+    font-size: .9rem;
+  }
 }
