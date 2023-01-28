@@ -389,6 +389,9 @@ p {
   .welcome-area{
     flex-direction: column-reverse;
   }
+  .welcome-area .welcome-img-area {
+    width: 70%;
+  }
   .welcome-area .welcome-area-content {
     width: 100%;
   }
@@ -444,8 +447,11 @@ footer {
 }
 
 @media (max-width: 575px) {
-    .nav-area .menu {
-        margin-left: .5rem;
+    .nav-area .logo {
+        display: none;
+    }
+    .nav-area {
+        justify-content: center;
     }
     .welcome-area {
         text-align: center;
