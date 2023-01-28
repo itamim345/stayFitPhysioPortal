@@ -8,7 +8,7 @@ const app = express();
 var cors = require("cors");
 
 // Importing DataBase
-require("./config/configdb").connect();
+require("./config/configDB").connect();
 const PORT = process.env.PORT || 5000;
 
 
