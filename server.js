@@ -16,6 +16,9 @@ const PORT = process.env.PORT || 5000;
 const bcrypt = require("bcryptjs");
 const { connect } = require("mongoose");
 
+//for deploying purpose
+const path = require('path');
+
 // Json Formatting user Data for sending to DB
 app.use(express.json());
 
@@ -42,7 +45,12 @@ app.use('/api/admin', adminRoute)
 app.use("/api/therapist", therapistRoute);
 
 
+// Accessing static file for deploying purpose
+app.use(express.static(path.join(__dirname, './stayfitphysioportalclient/build')))
 
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./stayfitphysioportalclient/build/index.html"))
+})
 
 
 // Server Listener
