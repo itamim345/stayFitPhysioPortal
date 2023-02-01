@@ -1,4 +1,8 @@
 import React from 'react';
+import testimonialImg2 from "../../../images/testimonials2.jpg";
+import testimonialImg4 from "../../../images/testimonials4.jpg";
+import testimonialImg3 from "../../../images/testimonials3.jpg";
+
 
 export default function Testimonials() {
   return (
@@ -9,10 +13,7 @@ export default function Testimonials() {
         </h2>
         <div className="all-testimonials">
           <div data-aos="flip-up" data-aos-duration="1000">
-            <img
-              src="https://i.ibb.co/kQykRnv/testimonials2.jpg"
-              alt="testimonial-1"
-            />
+            <img src={testimonialImg2} alt="testimonial-1" />
             <h6>Dharshani Arumugam</h6>
             <p>
               <q>
@@ -22,10 +23,7 @@ export default function Testimonials() {
             </p>
           </div>
           <div data-aos="flip-up" data-aos-duration="1000">
-            <img
-              src="https://i.ibb.co/5jcdd7r/testimonials4.jpg"
-              alt="testimonial-2"
-            />
+            <img src={testimonialImg4} alt="testimonial-2" />
             <h6>Praveen Bommanna</h6>
             <p>
               <q>
@@ -35,10 +33,7 @@ export default function Testimonials() {
             </p>
           </div>
           <div data-aos="flip-up" data-aos-duration="1000">
-            <img
-              src="https://i.ibb.co/vwn5DmM/testimonials3.jpg"
-              alt="testimonial-2"
-            />
+            <img src={testimonialImg3} alt="testimonial-3" />
             <h6>Yvenide Belizaire</h6>
             <p>
               <q>

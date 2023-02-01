@@ -1,4 +1,5 @@
 import React from 'react';
+import ourFeaturesImg from "../../../images/physio_portal_features.jpg"
 
 export default function OurFeatures() {
   return (
@@ -6,8 +7,8 @@ export default function OurFeatures() {
       <section className="our-features-section d-flex gap-5 align-items-center">
         <div className="w-50" data-aos="zoom-in-right" data-aos-duration="1000">
           <img
-            src="https://i.ibb.co/6m0rPqf/physio-portal-features.jpg"
-            alt="why-physio-img"
+            src={ourFeaturesImg}
+            alt="our-features-img"
             className="w-100 rounded"
           />
         </div>

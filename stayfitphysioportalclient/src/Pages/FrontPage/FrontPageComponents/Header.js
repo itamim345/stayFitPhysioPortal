@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Frontpage.css';
+import  logo from "../../../images/logo.png"
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
       <div class="nav-area">
         <div className="logo">
           <img
-            src="https://i.ibb.co/HhbbLzr/logo.png"
+            src={logo}
             alt=""
             className="w-25"
           />

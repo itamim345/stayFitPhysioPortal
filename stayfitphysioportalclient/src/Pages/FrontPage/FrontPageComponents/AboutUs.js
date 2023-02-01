@@ -1,5 +1,6 @@
 import React from 'react';
 import "../Frontpage.css"
+import aboutUsImg from "../../../images/physioPortal_about_us.jpg"
 
 export default function AboutUs() {
   return (
@@ -19,11 +20,7 @@ export default function AboutUs() {
           </p>
         </div>
         <div className="w-50" data-aos="zoom-in-left" data-aos-duration="1000">
-          <img
-            src="https://i.ibb.co/QDVCmCB/physio-Portal-about-us.jpg"
-            alt="why-physio-img"
-            className="w-100 rounded"
-          />
+          <img src={aboutUsImg} alt="abou-us-img" className="w-100 rounded" />
         </div>
       </section>
     </div>

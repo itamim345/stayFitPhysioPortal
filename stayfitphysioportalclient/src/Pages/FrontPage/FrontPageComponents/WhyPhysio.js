@@ -1,4 +1,5 @@
 import React from 'react';
+import whyPhysioImg from "../../../images/whyPhysio_img.jpg"
 
 export default function WhyPhysio() {
   return (
@@ -6,7 +7,7 @@ export default function WhyPhysio() {
       <section className="why-physio d-flex align-items-center gap-5">
         <div className="w-50" data-aos="zoom-in-right" data-aos-duration="1000">
           <img
-            src="https://i.ibb.co/StmrNkn/why-Physio-img.jpg"
+            src={whyPhysioImg}
             alt="why-physio-img"
             className="w-100 rounded"
           />

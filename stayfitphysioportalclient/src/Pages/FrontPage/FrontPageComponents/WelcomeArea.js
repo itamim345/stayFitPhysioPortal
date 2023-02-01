@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Frontpage.css'
+import welcomeImg  from "../../../images/physioportal_welcome_img2.png"
 
 export default function WelcomeArea() {
   return (
@@ -18,7 +19,7 @@ export default function WelcomeArea() {
             your Health. We are Setting new standards in physiotherapy. Relieve
             Pain & Regain Your Life.
           </p>
-          <div className='d-flex gap-3 welcome-btn'>
+          <div className="d-flex gap-3 welcome-btn">
             <Link to="/login">
               <button className="btn btn-danger btn-sm">
                 Book An Appointment
@@ -36,10 +37,7 @@ export default function WelcomeArea() {
           data-aos="zoom-in-left"
           data-aos-duration="1000"
         >
-          <img
-            src="https://i.ibb.co/yYC0y0P/physioportal-welcome-img2.png"
-            alt="welcome-img"
-          />
+          <img src={welcomeImg} alt="welcome-img" />
         </div>
       </section>
     </div>
