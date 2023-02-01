@@ -1,5 +1,5 @@
 
-# Paytm Redesign
+# stayFit PhysioPortal
 ## Introduction
 
 In this project, I have tried to make a Full Stack Therapists Appointment booking system.
