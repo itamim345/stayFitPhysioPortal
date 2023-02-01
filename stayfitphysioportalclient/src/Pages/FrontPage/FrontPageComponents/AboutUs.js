@@ -20,7 +20,7 @@ export default function AboutUs() {
           </p>
         </div>
         <div className="w-50" data-aos="zoom-in-left" data-aos-duration="1000">
-          <img src={aboutUsImg} alt="abou-us-img" className="w-100 rounded" />
+          <img src={aboutUsImg} alt="abou-Us-img" className="w-100 rounded" />
         </div>
       </section>
     </div>
