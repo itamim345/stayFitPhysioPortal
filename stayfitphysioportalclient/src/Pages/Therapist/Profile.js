@@ -8,6 +8,7 @@ import { hideLoading, showLoading } from "../../Redux/alertReducers";
 import axios from "axios";
 import toast from "react-hot-toast";
 import moment from "moment";
+import dayjs from 'dayjs';
 
 export default function Profile() {
     const { user } = useSelector((state) => state.user);
@@ -25,8 +26,8 @@ export default function Profile() {
             ...values,
             userId: user._id,
             timing: [
-              moment(values.timing[0]).format("hh:mm"),
-              moment(values.timing[1]).format("hh:mm"),
+              dayjs(values.timing[0]).format("HH:mm"),
+              dayjs(values.timing[1]).format("HH:mm"),
             ],
           },
           {

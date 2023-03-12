@@ -1,4 +1,5 @@
 import { Button, Col, Form, Input, Row, TimePicker } from 'antd';
+import dayjs from 'dayjs';
 import moment from 'moment';
 import React from 'react';
 
@@ -12,8 +13,8 @@ export default function TherapistForm({onFinish,initialValues}) {
           ...initialValues,
           ...(initialValues && {
             timing: [
-              moment(initialValues?.timing[0], "HH:mm"),
-              moment(initialValues?.timing[1], "HH:mm"),
+              dayjs(initialValues.timing[0], "HH:mm"),
+              dayjs(initialValues.timing[1], "HH:mm"),
             ],
           }),
         }}
@@ -104,7 +105,7 @@ export default function TherapistForm({onFinish,initialValues}) {
               name="timing"
               rules={[{ required: true }]}
             >
-              <TimePicker.RangePicker format="hh:mm" />
+              <TimePicker.RangePicker format="HH:mm" />
             </Form.Item>
           </Col>
         </Row>
