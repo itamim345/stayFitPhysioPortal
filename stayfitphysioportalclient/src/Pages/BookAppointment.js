@@ -136,7 +136,7 @@ export default function BookAppointment() {
               }}
             />
             <TimePicker
-              format="hh"
+              format="HH:mm"
               onChange={(val) => {
                 setIsavailable(false);
                 setTime(dayjs(val).format("hh:mm"));
