@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6a6c2b7.css",
-    "main.js": "/static/js/main.7fce4d21.js",
+    "main.css": "/static/css/main.c14aae8c.css",
+    "main.js": "/static/js/main.81eb878f.js",
     "static/js/787.7b681675.chunk.js": "/static/js/787.7b681675.chunk.js",
     "static/media/physioPortal_about_us.jpg": "/static/media/physioPortal_about_us.1ea5aba6a44469ebfb28.jpg",
     "static/media/physio_portal_features.jpg": "/static/media/physio_portal_features.507b6a9cbab355078932.jpg",
     "static/media/physioportal_welcome_img2.png": "/static/media/physioportal_welcome_img2.1cb3c0a9c9cb817f0d18.png",
     "static/media/whyPhysio_img.jpg": "/static/media/whyPhysio_img.213c3da2543418fb8926.jpg",
     "static/media/physioPortal_bg.jpg": "/static/media/physioPortal_bg.081f719fce029743155f.jpg",
+    "static/media/card0.png": "/static/media/card0.d3c55dda242f6806ca68.png",
     "static/media/testimonials2.jpg": "/static/media/testimonials2.f41d3a9c191b4b2b6b23.jpg",
     "static/media/testimonials4.jpg": "/static/media/testimonials4.d42fce9cb78eda5cd93b.jpg",
     "static/media/testimonials3.jpg": "/static/media/testimonials3.c352d0ff500d50ed08eb.jpg",
     "static/media/logo.png": "/static/media/logo.82dc5507947bb30ad7b1.png",
     "index.html": "/index.html",
-    "main.e6a6c2b7.css.map": "/static/css/main.e6a6c2b7.css.map",
-    "main.7fce4d21.js.map": "/static/js/main.7fce4d21.js.map",
+    "main.c14aae8c.css.map": "/static/css/main.c14aae8c.css.map",
+    "main.81eb878f.js.map": "/static/js/main.81eb878f.js.map",
     "787.7b681675.chunk.js.map": "/static/js/787.7b681675.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6a6c2b7.css",
-    "static/js/main.7fce4d21.js"
+    "static/css/main.c14aae8c.css",
+    "static/js/main.81eb878f.js"
   ]
 }
