@@ -7,6 +7,7 @@ import { hideLoading, showLoading } from "../Redux/alertReducers";
 import { toast } from "react-hot-toast";
 import "../OurCss/common.css";
 import dayjs from "dayjs";
+import { Link } from "react-router-dom";
 
 export default function Appointments() {
       const dispatch = useDispatch();
@@ -58,15 +59,27 @@ export default function Appointments() {
       dataIndex: "createdAt",
       render: (text, record) => (
         <p>
-          {dayjs(record.date).format("DD-MM-YYYY")} {dayjs(record.time).format("hh:mm")}
+          {dayjs(record.date).format("DD-MM-YYYY")}{" "}
+          {dayjs(record.time).format("hh:mm")}
         </p>
       ),
     },
     {
-        title: "status",
-        dataIndex: "status",
-
-    }
+      title: "status",
+      dataIndex: "status",
+    },
+    {
+      title: "Payment",
+      dataIndex: "payment",
+      render: (text, record) =>
+        record?.payment ? (
+          <p className="btn btn-success cursor-text">Paid</p>
+        ) : (
+          <Link to={`/payment/${record._id}`}>
+            <button className="btn btn-danger">Pay</button>
+          </Link>
+        ),
+    },
   ];
 
   

@@ -18,6 +18,9 @@ import DashboardHome from './Components/DashboardHome';
 import BookAppointment from './Pages/BookAppointment';
 import Appointments from './Pages/Appointments';
 import TherapistAppointments from './Pages/Therapist/TherapistAppointments';
+import Payment from './Pages/Payment';
+
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -102,7 +105,7 @@ function App() {
             path="/dashboard-home"
             element={
               <ProtectedRoute>
-                <DashboardHome/>
+                <DashboardHome />
               </ProtectedRoute>
             }
           />
@@ -111,7 +114,7 @@ function App() {
             path="/appointments"
             element={
               <ProtectedRoute>
-                <Appointments/>
+                <Appointments />
               </ProtectedRoute>
             }
           />
@@ -120,7 +123,7 @@ function App() {
             path="/therapist/appointments"
             element={
               <ProtectedRoute>
-                <TherapistAppointments/>
+                <TherapistAppointments />
               </ProtectedRoute>
             }
           />
@@ -129,12 +132,22 @@ function App() {
             path="/book-appointment/:therapistId"
             element={
               <ProtectedRoute>
-                <BookAppointment/>
+                <BookAppointment />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/payment/:appointmentId"
+            element={
+              <ProtectedRoute>
+                <Payment />
               </ProtectedRoute>
             }
           />
         </Routes>
       </BrowserRouter>
+      <MessengerCustomerChat pageId="100092432277693" appId="100338403078761" />
     </div>
   );
 }

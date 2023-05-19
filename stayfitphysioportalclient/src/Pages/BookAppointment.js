@@ -126,6 +126,10 @@ export default function BookAppointment() {
             <strong>Timing:</strong> {therapist.timing[0]} -{" "}
             {therapist.timing[1]}
           </p>
+          <p>
+            <strong>Fees: </strong>
+            {therapist.consaltancyFees}
+          </p>
           <div>
             <DatePicker
               format="DD-MM-YYYY"

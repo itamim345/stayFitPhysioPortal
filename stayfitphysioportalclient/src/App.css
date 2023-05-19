@@ -13,3 +13,40 @@
     height: 7rem;
     width: 7rem;
 }
+.payment-section {
+    margin-top: 7rem !important;
+    width: 40%;
+    margin: 0 auto;
+    /* background-color: green; */
+    color: #fff;
+    padding: 1rem;
+    border-radius: .2rem;
+    border: 2px solid blue;
+    
+    background: linear-gradient(36deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+.payment-section form div {
+    background-color: white;
+    padding: .3rem;
+    border-radius: .2rem;
+    margin-bottom: 1rem;
+}
+
+/* Tanuja's css */
+.abc{
+    width: 700px;
+    height: 400px;
+    /* margin-top: 50px; */
+    margin: 0
+    auto;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px #888888;
+}
+.paymentcard{
+    background-color: #f1f0f0;
+    border-radius: 10px;
+    
+}
+h3{
+    color: #888888;
+}

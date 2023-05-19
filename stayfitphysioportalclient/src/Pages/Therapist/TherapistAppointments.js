@@ -90,6 +90,16 @@ export default function TherapistAppointments() {
       dataIndex: "status",
     },
     {
+      title: "Payment",
+      dataIndex: "payment",
+      render: (text, record) =>
+        record?.payment ? (
+          <p className="btn btn-success cursor-text">Paid</p>
+        ) : (
+          <p className="btn btn-danger cursor-text">Unpaid</p>
+        ),
+    },
+    {
       title: "Actions",
       dataIndex: "actions",
       render: (text, record) => (
@@ -102,12 +112,12 @@ export default function TherapistAppointments() {
               Approve
             </em>
           )}
-            <em
-              className="cp-link"
-              onClick={() => changeAppointmentStatus(record, "rejected")}
-            >
-              Reject
-            </em>   
+          <em
+            className="cp-link"
+            onClick={() => changeAppointmentStatus(record, "rejected")}
+          >
+            Reject
+          </em>
         </div>
       ),
     },
