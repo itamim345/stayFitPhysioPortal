@@ -147,7 +147,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-      <MessengerCustomerChat pageId="100092432277693" appId="100338403078761" />
+      <MessengerCustomerChat pageId="116351301461319" appId="100338403078761" />
     </div>
   );
 }
