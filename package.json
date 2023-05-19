@@ -27,6 +27,7 @@
     "mongoose": "^6.7.4",
     "nodemon": "^2.0.20",
     "react-bootstrap": "^2.6.0",
-    "react-dayjs": "^0.3.2"
+    "react-dayjs": "^0.3.2",
+    "stripe": "^12.5.0"
   }
 }

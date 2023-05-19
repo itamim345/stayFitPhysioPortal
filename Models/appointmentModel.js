@@ -29,6 +29,11 @@ const appoinmentSchema = new mongoose.Schema({
         required: true,
         default: "pending"
     },
+    payment: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
 
 }, {
     timestamps:true

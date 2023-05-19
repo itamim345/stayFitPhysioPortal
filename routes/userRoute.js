@@ -8,6 +8,11 @@ const authmiddleware = require("../Middlewares/authMiddleware");
 const Appointment = require('../Models/appointmentModel');
 const moment = require("moment");
 const dayjs = require("dayjs");
+const ObjectId = require('mongodb').ObjectId;
+
+const stripe = require("stripe")(
+  "sk_test_51N57k4SD6BX1TTRJZUL4dwJJrxNyDxDCBuutyrIn5rZIqs2GM0IT7KeDZAgV9j5AhFLDMaRDAGx5PfFmGPE4zdkH00LXPd7u78"
+);
 
 
 
@@ -267,4 +272,56 @@ router.get("/get-appointments-by-user-id", authmiddleware, async (req, res) => {
     });
   }
 });
+
+//Get-appointment-info-by-id Route
+router.get('/get-appointment-info-by-id/:id', authmiddleware, async(req, res)=>{
+  try {
+    const findAppointment = await Appointment.findOne({ _id: ObjectId(req.params.id) });
+    return res.status(200).send({
+      success: true,
+      data: findAppointment, //sending the Appointement
+    });
+    }catch (error) {
+      return res.status(500).send({
+        message: "Error to get Appointment",
+        success: false
+      })
+  } 
+})
+
+// Payment Integration API
+router.post("/create-payment-intent", async (req, res) => {
+  const { consaltancyFees } = req.body;
+  const amount = 100*consaltancyFees;
+
+  // Create a PaymentIntent with the order amount and currency
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: amount,
+    currency: "inr",
+    payment_method_types: ["card"],
+  });
+
+  res.send({
+    clientSecret: paymentIntent.client_secret,
+  });
+});
+
+//Change appointment-payment-info-by-id Route
+router.post("/change-appointment-payment-info-by-id", authmiddleware, async(req, res)=>{
+  try {
+    const appointment = await Appointment.findOne({ _id: req.body.appointId });
+    appointment.payment = true;
+    await appointment.save();
+    return res.status(200).send({
+      message: "Payment Status changed into true",
+      success: true,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      message: "Error Occured in changing payment status!",
+      success: false,
+    });
+  }
+})
+
 module.exports = router;
