@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import "../OurCss/common.css"
 
 export default function Therapist({therapist}) {
-  console.log(therapist)
+  // console.log(therapist)
   const navigate = useNavigate()
   return (
     <div>
