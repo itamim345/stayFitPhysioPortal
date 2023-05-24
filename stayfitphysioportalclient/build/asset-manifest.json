@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c14aae8c.css",
-    "main.js": "/static/js/main.16c97756.js",
+    "main.js": "/static/js/main.0d8e0f1a.js",
     "static/js/787.7b681675.chunk.js": "/static/js/787.7b681675.chunk.js",
     "static/media/physioPortal_about_us.jpg": "/static/media/physioPortal_about_us.1ea5aba6a44469ebfb28.jpg",
     "static/media/physio_portal_features.jpg": "/static/media/physio_portal_features.507b6a9cbab355078932.jpg",
@@ -15,11 +15,11 @@
     "static/media/logo.png": "/static/media/logo.82dc5507947bb30ad7b1.png",
     "index.html": "/index.html",
     "main.c14aae8c.css.map": "/static/css/main.c14aae8c.css.map",
-    "main.16c97756.js.map": "/static/js/main.16c97756.js.map",
+    "main.0d8e0f1a.js.map": "/static/js/main.0d8e0f1a.js.map",
     "787.7b681675.chunk.js.map": "/static/js/787.7b681675.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c14aae8c.css",
-    "static/js/main.16c97756.js"
+    "static/js/main.0d8e0f1a.js"
   ]
 }
