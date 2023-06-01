@@ -31,22 +31,3 @@
     border-radius: .2rem;
     margin-bottom: 1rem;
 }
-
-/* Tanuja's css */
-.abc{
-    width: 700px;
-    height: 400px;
-    /* margin-top: 50px; */
-    margin: 0
-    auto;
-    border-radius: 10px;
-    box-shadow: 5px 10px 8px #888888;
-}
-.paymentcard{
-    background-color: #f1f0f0;
-    border-radius: 10px;
-    
-}
-h3{
-    color: #888888;
-}

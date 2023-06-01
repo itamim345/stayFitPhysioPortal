@@ -18,8 +18,6 @@ export default function Payment() {
     const { appointmentId } = useParams();
     const dispatch = useDispatch();
     const [appointmentInfo, setAppointmentInfo] = useState()
-    //test state
-    const [tst, setTst] = useState("100taka");
             const getAppointmentInfoById = async () => {
               try {
                 dispatch(showLoading());
@@ -76,33 +74,6 @@ export default function Payment() {
             <CheckoutForm appointmentData={appointmentInfo} />
           </Elements>
         )}
-      </div>
-
-      <div className="container mt-5 ">
-        <div className="row abc text-center ">
-          <div className="col-lg-5">
-            <h3 className="mt-2">Please Pay Your Fees</h3>
-            <div>
-              <p>Therapist : Tarik Zamal</p>
-            </div>
-            <div>
-              <p>Specializatio : Orthopedic</p>
-            </div>
-            <div>
-              <p>Timing : 08:30 - 04:30 </p>
-            </div>
-          </div>
-          <div className="col-lg-7 paymentcard ">
-            <div>
-              <h3>Payment</h3>
-              <img src={CardImg} alt="" className="w-50 h-40" srcset="" />
-            </div>
-            {/* tst section */}
-            <br />
-            <h2>{tst}</h2>
-            <button onClick={() => setTst("500 taka")}>Click me</button>
-          </div>
-        </div>
       </div>
     </DashboardLayout>
   );
