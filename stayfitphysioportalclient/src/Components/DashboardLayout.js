@@ -66,8 +66,8 @@ export default function DashboardLayout(props) {
     },
   ];
   const menuforRender = user?.isAdmin ? adminmenu : user?.isTherapist ? therapistmenu : usermenu; 
-  const condition1 = user?.isAdmin === true; //to add dbleft class for bg-change as adming
-  const condition2 = user?.isTherapist === true; //to add dbleft class for bg-change as adming
+  const condition1 = user?.isAdmin === true; //to add dbleft class for bg-change as admin
+  const condition2 = user?.isTherapist === true; //to add dbleft class for bg-change as Therapist
   return (
     <div>
       <div className="db-layout m-4">
@@ -77,7 +77,17 @@ export default function DashboardLayout(props) {
           }`}
         >
           <div className="left-db-title">
-            <h4>StyFit Portal</h4>
+            {!condition1 && !condition2 && (
+              <h4 className="text-center text-decoration-underline">Patient</h4>
+            )}
+            {condition1 && (
+              <h4 className="text-center text-decoration-underline">Admin</h4>
+            )}
+            {condition2 && (
+              <h4 className="text-center text-decoration-underline">
+                Therapist
+              </h4>
+            )}
           </div>
           <div className="left-db-main">
             {menuforRender.map((menuitem) => {
